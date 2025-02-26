@@ -1,0 +1,17 @@
+D:\Programador de  sistemas\Login\Login\bin\Debug\net8.0-windows\Login.exe
+D:\Programador de  sistemas\Login\Login\bin\Debug\net8.0-windows\Login.deps.json
+D:\Programador de  sistemas\Login\Login\bin\Debug\net8.0-windows\Login.runtimeconfig.json
+D:\Programador de  sistemas\Login\Login\bin\Debug\net8.0-windows\Login.dll
+D:\Programador de  sistemas\Login\Login\bin\Debug\net8.0-windows\Login.pdb
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.csproj.GenerateResource.cache
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.AssemblyInfoInputs.cache
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.AssemblyInfo.cs
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.csproj.CoreCompileInputs.cache
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.dll
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\refint\Login.dll
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.pdb
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.genruntimeconfig.cache
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\ref\Login.dll
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.FormLogin.resources
+D:\Programador de  sistemas\Login\Login\obj\Debug\net8.0-windows\Login.Properties.Resources.resources
