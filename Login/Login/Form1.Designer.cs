@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            textBox1Usuario = new TextBox();
+            textBox1Login = new TextBox();
             textBox2Senha = new TextBox();
             button1 = new Button();
             labelLogin = new Label();
             labelSenha = new Label();
             labelEsqueceuSuaSenha = new Label();
-            Recebe = new Label();
+            Aviso = new Label();
             SuspendLayout();
             // 
-            // textBox1Usuario
+            // textBox1Login
             // 
-            textBox1Usuario.Location = new Point(420, 217);
-            textBox1Usuario.Name = "textBox1Usuario";
-            textBox1Usuario.Size = new Size(190, 23);
-            textBox1Usuario.TabIndex = 0;
-            textBox1Usuario.TextChanged += textBox1Usuario_TextChanged;
+            textBox1Login.Location = new Point(420, 217);
+            textBox1Login.Name = "textBox1Login";
+            textBox1Login.Size = new Size(190, 23);
+            textBox1Login.TabIndex = 0;
+            textBox1Login.TextChanged += textBox1Usuario_TextChanged;
             // 
             // textBox2Senha
             // 
@@ -106,17 +106,17 @@
             labelEsqueceuSuaSenha.Text = "Esqueceu a senha?";
             labelEsqueceuSuaSenha.Click += label4_Click;
             // 
-            // Recebe
+            // Aviso
             // 
-            Recebe.AutoSize = true;
-            Recebe.BackColor = Color.Transparent;
-            Recebe.ForeColor = Color.White;
-            Recebe.Location = new Point(474, 385);
-            Recebe.Name = "Recebe";
-            Recebe.Size = new Size(38, 15);
-            Recebe.TabIndex = 7;
-            Recebe.Text = "label1";
-            Recebe.Click += label1_Click_1;
+            Aviso.AutoSize = true;
+            Aviso.BackColor = Color.Transparent;
+            Aviso.ForeColor = Color.White;
+            Aviso.Location = new Point(474, 385);
+            Aviso.Name = "Aviso";
+            Aviso.Size = new Size(38, 15);
+            Aviso.TabIndex = 7;
+            Aviso.Text = "label1";
+            Aviso.Click += label1_Click_1;
             // 
             // FormLogin
             // 
@@ -125,13 +125,13 @@
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1014, 585);
-            Controls.Add(Recebe);
+            Controls.Add(Aviso);
             Controls.Add(labelEsqueceuSuaSenha);
             Controls.Add(labelSenha);
             Controls.Add(labelLogin);
             Controls.Add(button1);
             Controls.Add(textBox2Senha);
-            Controls.Add(textBox1Usuario);
+            Controls.Add(textBox1Login);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormLogin";
             Text = "Login";
@@ -141,12 +141,12 @@
 
         #endregion
 
-        private TextBox textBox1Usuario;
+        private TextBox textBox1Login;
         private TextBox textBox2Senha;
         private Button button1;
         private Label labelLogin;
         private Label labelSenha;
         private Label labelEsqueceuSuaSenha;
-        private Label Recebe;
+        private Label Aviso;
     }
 }
