@@ -27,7 +27,7 @@ namespace Login
             string usuario = textBox1Login.Text; // string com o nome "usuário" que irá receber o que for preenchido no "text box" na frente de "login"
             string senha = textBox2Senha.Text; // string com o nome "senha" que irá receber o que for preenchido no "text box" na frente da senha 
 
-            if ((string.IsNullOrEmpty(usuario)) && (string.IsNullOrEmpty(senha))) //uso de uma nova propriedade para tratar o erro de usuário e senha nulos ou vazios
+            if (string.IsNullOrEmpty(usuario) && string.IsNullOrEmpty(senha)) //uso de uma nova propriedade para tratar o erro de usuário e senha nulos ou vazios
             {
                 Aviso.Text = "Usuário e senha são obrigatórios"; // se a condição acima for verdadeira, irá aparecer essa mensagem
                 Aviso.ForeColor = Color.Red; //alterar cor do texto acima para vermelho
