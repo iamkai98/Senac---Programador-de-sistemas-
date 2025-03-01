@@ -37,10 +37,11 @@
             labelEsqueceuSuaSenha = new Label();
             Aviso = new Label();
             button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBox1LoginCadastro = new TextBox();
+            textBox2SenhaCadastro = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            AvisoCadastro = new Label();
             SuspendLayout();
             // 
             // textBox1Login
@@ -131,20 +132,21 @@
             button2.TabIndex = 8;
             button2.Text = "Entrar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // textBox1
+            // textBox1LoginCadastro
             // 
-            textBox1.Location = new Point(1347, 255);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 23);
-            textBox1.TabIndex = 9;
+            textBox1LoginCadastro.Location = new Point(1347, 255);
+            textBox1LoginCadastro.Name = "textBox1LoginCadastro";
+            textBox1LoginCadastro.Size = new Size(151, 23);
+            textBox1LoginCadastro.TabIndex = 9;
             // 
-            // textBox2
+            // textBox2SenhaCadastro
             // 
-            textBox2.Location = new Point(1347, 296);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 23);
-            textBox2.TabIndex = 10;
+            textBox2SenhaCadastro.Location = new Point(1347, 296);
+            textBox2SenhaCadastro.Name = "textBox2SenhaCadastro";
+            textBox2SenhaCadastro.Size = new Size(151, 23);
+            textBox2SenhaCadastro.TabIndex = 10;
             // 
             // label1
             // 
@@ -165,6 +167,15 @@
             label2.TabIndex = 12;
             label2.Text = "Senha:";
             // 
+            // AvisoCadastro
+            // 
+            AvisoCadastro.AutoSize = true;
+            AvisoCadastro.Location = new Point(1414, 385);
+            AvisoCadastro.Name = "AvisoCadastro";
+            AvisoCadastro.Size = new Size(38, 15);
+            AvisoCadastro.TabIndex = 13;
+            AvisoCadastro.Text = "label3";
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -172,10 +183,11 @@
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1764, 585);
+            Controls.Add(AvisoCadastro);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBox2SenhaCadastro);
+            Controls.Add(textBox1LoginCadastro);
             Controls.Add(button2);
             Controls.Add(Aviso);
             Controls.Add(labelEsqueceuSuaSenha);
@@ -201,9 +213,10 @@
         private Label labelEsqueceuSuaSenha;
         private Label Aviso;
         private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBox1LoginCadastro;
+        private TextBox textBox2SenhaCadastro;
         private Label label1;
         private Label label2;
+        private Label AvisoCadastro;
     }
 }
