@@ -99,9 +99,9 @@ namespace Login
 
             bool UsuarioEncontrado = false; //cria uma variavel booleana que é falsa
 
-            for (int i = 0; i < listaUsuarios.Count; i++) // primeira condição inicio, segunda condição fim, terceira condição incremento
+            for (int i = 0; i < listaUsuarios.Count; i++) //laço de repetição percorre toda a lista "listaUsuarios", de 0 até a última posição
             {
-                if (NovoUsuario == listaUsuarios[i])//se o usuario buscado for igual ao usuario na posição i
+                if (NovoUsuario == listaUsuarios[i])//se o novo usuario for igual ao usuario na posição i
                 {
                     UsuarioEncontrado = true; //só funciona se a condição acima for verdadeira
                 }
@@ -115,8 +115,8 @@ namespace Login
             }
             else
             {
-                AvisoCadastro.Text = "Usuario ja cadastrado";
-                AvisoCadastro.ForeColor = Color.Red;
+                AvisoCadastro.Text = "Usuario ja cadastrado"; //avisa que o usuario ja foi cadastrado
+                AvisoCadastro.ForeColor = Color.Red;//avisa que o usuario ja foi cadastrado
 
             }
         }
