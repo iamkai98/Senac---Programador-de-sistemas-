@@ -1,7 +1,11 @@
+using System.Configuration;
+
 namespace Login
 {
     public partial class FormLogin : Form
     {
+        List<string> listaEspeciais = new List<string> { "!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", ":", ";", "<", ">", ",", ".", "?", "/", "|", "\\" };
+
         List<string> listaUsuarios = new List<string> { "neymar.jr", "pablo.vittar", "sukuna.silva" };
         // neymar posição 0 - pablo posição 1 - sukuna posição 2    
         List<string> listaSenhas = new List<string> { "marquezine", "1234", "777" };
@@ -99,6 +103,14 @@ namespace Login
 
             bool UsuarioEncontrado = false; //cria uma variavel booleana que é falsa
 
+            if (string.IsNullOrWhiteSpace(NovaSenha) || string.IsNullOrWhiteSpace(NovoUsuario))
+            {
+                AvisoCadastro.Text = "Login e senha são obrigatorios";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+
             for (int i = 0; i < listaUsuarios.Count; i++) //laço de repetição percorre toda a lista "listaUsuarios", de 0 até a última posição
             {
                 if (NovoUsuario == listaUsuarios[i])//se o novo usuario for igual ao usuario na posição i
@@ -106,19 +118,79 @@ namespace Login
                     UsuarioEncontrado = true; //só funciona se a condição acima for verdadeira
                 }
             }
-            if (!UsuarioEncontrado)
+
+            if (UsuarioEncontrado)
             {
-                listaUsuarios.Add(NovoUsuario);//adiciona o novo usuario na lista de usuarios
-                listaSenhas.Add(NovaSenha);//adiciona a nova senha na lista de senhas
-                AvisoCadastro.Text = "Usuario cadastrado com sucesso";//avisa que o usuario foi cadastrado
-                AvisoCadastro.ForeColor = Color.Green;
+                AvisoCadastro.Text = "Usuario ja existe";//avisa que o usuario foi cadastrado
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
             }
-            else
+         
+
+            if (NovaSenha.Length < 8)
             {
-                AvisoCadastro.Text = "Usuario ja cadastrado"; //avisa que o usuario ja foi cadastrado
-                AvisoCadastro.ForeColor = Color.Red;//avisa que o usuario ja foi cadastrado
+                AvisoCadastro.Text = "Senha deve ter no minimo 8 caracteres";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+            if (!NovaSenha.Any(char.IsUpper))
+            {
+                AvisoCadastro.Text = "Senha deve ter no minimo 1 letra maiuscula";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+            
+            if (!NovaSenha.Any(char.IsLower))
+            {
+                AvisoCadastro.Text = "Senha deve ter no mínimo 1 letra minuscula ";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+            if (!NovaSenha.Any(char.IsNumber))
+            {
+                AvisoCadastro.Text = "Senha deve ter no mínimo 1 número";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+            if (NovaSenha.Any(char.IsWhiteSpace))
+            {
+                AvisoCadastro.Text = "Senha não pode ter espaço em branco";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+            bool posicaoChar = false;
+
+            for (int i = 0; i < NovaSenha.Length; i++)
+            {
+                if (NovaSenha.Contains(listaEspeciais[i]))
+                {
+                    posicaoChar = true;
+                    return;
+                }
 
             }
+
+            if (!posicaoChar)
+            {
+                AvisoCadastro.Text = "Senha deve ter no mínimo 1 caractere especial";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+            listaUsuarios.Add(NovoUsuario);//adiciona o novo usuario na lista de usuarios
+            listaSenhas.Add(NovaSenha);//adiciona a nova senha na lista de senhas
+            AvisoCadastro.Text = "Usuário Cadastrado";
+            AvisoCadastro.ForeColor = Color.Green;
+
+        }
+
+        private void textBox2SenhaCadastro_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

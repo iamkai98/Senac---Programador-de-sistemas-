@@ -147,6 +147,7 @@
             textBox2SenhaCadastro.Name = "textBox2SenhaCadastro";
             textBox2SenhaCadastro.Size = new Size(151, 23);
             textBox2SenhaCadastro.TabIndex = 10;
+            textBox2SenhaCadastro.TextChanged += textBox2SenhaCadastro_TextChanged;
             // 
             // label1
             // 
