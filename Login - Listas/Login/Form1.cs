@@ -98,85 +98,61 @@ namespace Login
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string NovoUsuario = textBox1LoginCadastro.Text;
-            string NovaSenha = textBox2SenhaCadastro.Text;
+            string NovoUsuario = textBox1LoginCadastro.Text; //pega o texto do textBox1LoginCadastro e armazena na variavel NovoUsuario
+            string NovaSenha = textBox2SenhaCadastro.Text; //pega o texto do textBox2SenhaCadastro e armazena na variavel NovaSenha
 
-            bool UsuarioEncontrado = false; //cria uma variavel booleana que é falsa
-
-            if (string.IsNullOrWhiteSpace(NovaSenha) || string.IsNullOrWhiteSpace(NovoUsuario))
+            if (string.IsNullOrWhiteSpace(NovaSenha) || string.IsNullOrWhiteSpace(NovoUsuario)) //se a senha ou o usuario for nulo ou vazio irá aparecer a mensagem "login e senha são obrigatorios"
             {
                 AvisoCadastro.Text = "Login e senha são obrigatorios";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
 
-
-            for (int i = 0; i < listaUsuarios.Count; i++) //laço de repetição percorre toda a lista "listaUsuarios", de 0 até a última posição
-            {
-                if (NovoUsuario == listaUsuarios[i])//se o novo usuario for igual ao usuario na posição i
-                {
-                    UsuarioEncontrado = true; //só funciona se a condição acima for verdadeira
-                }
-            }
-
-            if (UsuarioEncontrado)
-            {
-                AvisoCadastro.Text = "Usuario ja existe";//avisa que o usuario foi cadastrado
-                AvisoCadastro.ForeColor = Color.Red;
-                return;
-            }
-         
-
-            if (NovaSenha.Length < 8)
+            if (NovaSenha.Length < 8) //se a senha tiver menos de 8 caracteres irá aparecer a mensagem "senha deve ter no minimo 8 caracteres"
             {
                 AvisoCadastro.Text = "Senha deve ter no minimo 8 caracteres";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
 
-            if (!NovaSenha.Any(char.IsUpper))
+            if (!NovaSenha.Any(char.IsUpper))//se a senha não tiver nenhuma letra maiuscula irá aparecer a mensagem "senha deve ter no minimo 1 letra maiuscula"
             {
                 AvisoCadastro.Text = "Senha deve ter no minimo 1 letra maiuscula";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
             
-            if (!NovaSenha.Any(char.IsLower))
+            if (!NovaSenha.Any(char.IsLower))//se a senha não tiver nenhuma letra minuscula irá aparecer a mensagem "senha deve ter no minimo 1 letra minuscula"
             {
                 AvisoCadastro.Text = "Senha deve ter no mínimo 1 letra minuscula ";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
 
-            if (!NovaSenha.Any(char.IsNumber))
+            if (!NovaSenha.Any(char.IsNumber))//se a senha não tiver nenhum numero irá aparecer a mensagem "senha deve ter no minimo 1 numero"
             {
                 AvisoCadastro.Text = "Senha deve ter no mínimo 1 número";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
 
-            if (NovaSenha.Any(char.IsWhiteSpace))
+            if (NovaSenha.Any(char.IsWhiteSpace))//se a senha tiver espaço em branco irá aparecer a mensagem "senha não pode ter espaço em branco"
             {
                 AvisoCadastro.Text = "Senha não pode ter espaço em branco";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
 
-            bool posicaoChar = false;
-
-            for (int i = 0; i < NovaSenha.Length; i++)
-            {
-                if (NovaSenha.Contains(listaEspeciais[i]))
-                {
-                    posicaoChar = true;
-                    return;
-                }
-
-            }
-
-            if (!posicaoChar)
+           if (!NovaSenha.Any(char.IsPunctuation))//se a senha não tiver nenhum caractere especial irá aparecer a mensagem "senha deve ter no minimo 1 caractere especial"
             {
                 AvisoCadastro.Text = "Senha deve ter no mínimo 1 caractere especial";
+                AvisoCadastro.ForeColor = Color.Red;
+                return;
+            }
+
+            if (listaUsuarios.Contains(NovoUsuario))//se a lista de usuarios contiver o novo usuario irá aparecer a mensagem "usuário já cadastrado" e a cor do texto será vermelha
+            {
+                AvisoCadastro.Text = "Usuário já cadastrado";
                 AvisoCadastro.ForeColor = Color.Red;
                 return;
             }
@@ -185,6 +161,8 @@ namespace Login
             listaSenhas.Add(NovaSenha);//adiciona a nova senha na lista de senhas
             AvisoCadastro.Text = "Usuário Cadastrado";
             AvisoCadastro.ForeColor = Color.Green;
+            textBox1LoginCadastro.Clear();//limpa o textBox1LoginCadastro
+            textBox2SenhaCadastro.Clear();//limpa o textBox2SenhaCadastro
 
         }
 
