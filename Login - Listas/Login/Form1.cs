@@ -4,12 +4,12 @@ namespace Login
 {
     public partial class FormLogin : Form
     {
-        List<string> listaEspeciais = new List<string> { "!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "_", "+", "=", "{", "}", "[", "]", ":", ";", "<", ">", ",", ".", "?", "/", "|", "\\" };
+        Usuario neymar = new Usuario() { Email = "neymar.jr@email.com", Senha = "Brun@123" };
+        Usuario pablo = new Usuario() { Email = "pablo.vitar@email.com", Senha = "12345Abc!" };
+        Usuario sukuna = new Usuario() { Email = "sukuna.silva@email.com", Senha = "Sete7Sete!" };
 
-        List<string> listaUsuarios = new List<string> { "neymar.jr", "pablo.vittar", "sukuna.silva" };
-        // neymar posição 0 - pablo posição 1 - sukuna posição 2    
-        List<string> listaSenhas = new List<string> { "marquezine", "1234", "777" };
-        // marquezine posição 0 - 1234 posição 1 - 777 posição 2
+
+        List<Usuario> usuarios = new List<Usuario>();
         public FormLogin()
         {
             InitializeComponent();
@@ -42,14 +42,15 @@ namespace Login
                 return;
             }
 
-            if (senha == null || senha == "")
+            if (string.IsNullOrWhiteSpace(senha))
             {
                 Aviso.Text = "Senha eh obrigatoria";
                 Aviso.ForeColor = Color.Red;
                 return;
             }
 
-            int posicaoUsuarioEncontrado = -1;
+            int posicaoUsuarioEncontrado = listaUsuarios.IndexOf(usuarioBuscado);
+
             for (int i = 0; i < listaUsuarios.Count; i++) // primeira condição inicio, segunda condição fim, terceira condição incremento
             {
                 if (usuarioBuscado == listaUsuarios[i])//se o usuario buscado for igual ao usuario na posição i
