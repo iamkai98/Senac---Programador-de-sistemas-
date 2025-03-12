@@ -16,3 +16,21 @@ D:\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calcula
 D:\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.genruntimeconfig.cache
 D:\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\ref\Calculadora.dll
 D:\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.NewForm.resources
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\bin\Debug\net8.0-windows\Calculadora.exe
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\bin\Debug\net8.0-windows\Calculadora.deps.json
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\bin\Debug\net8.0-windows\Calculadora.runtimeconfig.json
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\bin\Debug\net8.0-windows\Calculadora.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\bin\Debug\net8.0-windows\Calculadora.pdb
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.Form1.resources
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.NewForm.resources
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.csproj.GenerateResource.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.AssemblyInfoInputs.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.AssemblyInfo.cs
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.sourcelink.json
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\refint\Calculadora.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.pdb
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.genruntimeconfig.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\ref\Calculadora.dll
