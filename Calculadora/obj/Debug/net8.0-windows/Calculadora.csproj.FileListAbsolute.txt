@@ -34,4 +34,7 @@ C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\S
 C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.pdb
 C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.genruntimeconfig.cache
 C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\ref\Calculadora.dll
+<<<<<<< HEAD
 D:\Senac---Programador-de-sistemas-\Calculadora\obj\Debug\net8.0-windows\Calculadora.FormPerimetro.resources
+=======
+>>>>>>> 2559fffdb4bc3e9fda50173b5ca0df2bc1b2106c

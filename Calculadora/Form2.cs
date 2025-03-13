@@ -50,7 +50,11 @@ namespace Calculadora
             string kilogramas = textBoxKG.Text;
 
             float alturaMetros = float.Parse(centimetros) / 100;//CONVERTENDO CENTÍMETROS PARA METROS
+<<<<<<< HEAD
             float resultado = float.Parse(kilogramas) / ((alturaMetros) * (alturaMetros)); //FÓRMULA DO IMC
+=======
+            float resultado = float.Parse(kilogramas) / (alturaMetros) * (alturaMetros); //FÓRMULA DO IMC
+>>>>>>> 2559fffdb4bc3e9fda50173b5ca0df2bc1b2106c
 
 
 
