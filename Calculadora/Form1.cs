@@ -231,5 +231,13 @@ namespace Calculadora
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormPerimetro newform = new FormPerimetro();
+            newform.Show();
+            this.Hide();
+
+        }
     }
 }

@@ -43,7 +43,8 @@
             radioButtonMultiplicar = new RadioButton();
             radioButtonDividir = new RadioButton();
             textBoxResultado = new TextBox();
-            button1 = new Button();
+            buttonEntrarIMC = new Button();
+            buttonEntrarPerimetro = new Button();
             SuspendLayout();
             // 
             // buttonResultado
@@ -202,22 +203,33 @@
             textBoxResultado.Size = new Size(100, 23);
             textBoxResultado.TabIndex = 17;
             // 
-            // button1
+            // buttonEntrarIMC
             // 
-            button1.Location = new Point(660, 405);
-            button1.Name = "button1";
-            button1.Size = new Size(128, 23);
-            button1.TabIndex = 18;
-            button1.Text = "Mais Opções >>>";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            buttonEntrarIMC.Location = new Point(660, 405);
+            buttonEntrarIMC.Name = "buttonEntrarIMC";
+            buttonEntrarIMC.Size = new Size(128, 23);
+            buttonEntrarIMC.TabIndex = 18;
+            buttonEntrarIMC.Text = "Calcular IMC";
+            buttonEntrarIMC.UseVisualStyleBackColor = true;
+            buttonEntrarIMC.Click += button1_Click_1;
+            // 
+            // buttonEntrarPerimetro
+            // 
+            buttonEntrarPerimetro.Location = new Point(661, 375);
+            buttonEntrarPerimetro.Name = "buttonEntrarPerimetro";
+            buttonEntrarPerimetro.Size = new Size(127, 23);
+            buttonEntrarPerimetro.TabIndex = 19;
+            buttonEntrarPerimetro.Text = "Calcular Perímetro";
+            buttonEntrarPerimetro.UseVisualStyleBackColor = true;
+            buttonEntrarPerimetro.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(buttonEntrarPerimetro);
+            Controls.Add(buttonEntrarIMC);
             Controls.Add(textBoxResultado);
             Controls.Add(radioButtonDividir);
             Controls.Add(radioButtonMultiplicar);
@@ -256,6 +268,7 @@
         private RadioButton radioButtonMultiplicar;
         private RadioButton radioButtonDividir;
         private TextBox textBoxResultado;
-        private Button button1;
+        private Button buttonEntrarIMC;
+        private Button buttonEntrarPerimetro;
     }
 }
