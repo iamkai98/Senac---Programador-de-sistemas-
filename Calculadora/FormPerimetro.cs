@@ -65,7 +65,7 @@ namespace Calculadora
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
-            {
+            {   textBoxQuadrado.Enabled = true;
                 textBoxLado1Rtagl.Enabled = false;
                 textBoxLado2Rtagl.Enabled = false;
                 textBoxAltura.Enabled = false;
@@ -74,6 +74,9 @@ namespace Calculadora
 
             if (comboBox1.SelectedIndex == 1)
             {
+                textBoxLado1Rtagl.Enabled = true;
+                textBoxLado2Rtagl.Enabled = true;
+                textBoxAltura.Enabled = true;
                 textBoxQuadrado.Enabled = false;
                 return;
             }
