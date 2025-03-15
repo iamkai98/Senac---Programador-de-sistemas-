@@ -39,7 +39,7 @@
             textBoxLarguraRetangulo = new TextBox();
             label6 = new Label();
             textBoxAlturaRetangulo = new TextBox();
-            buttonCalcular = new Button();
+            buttonCalcularQuad = new Button();
             textBoxPeriQuad = new TextBox();
             textBoxAreaQuad = new TextBox();
             textBoxVolQuad = new TextBox();
@@ -52,7 +52,7 @@
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
-            button1 = new Button();
+            buttonCalcularRet = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -148,14 +148,15 @@
             textBoxAlturaRetangulo.Size = new Size(100, 23);
             textBoxAlturaRetangulo.TabIndex = 9;
             // 
-            // buttonCalcular
+            // buttonCalcularQuad
             // 
-            buttonCalcular.Location = new Point(204, 254);
-            buttonCalcular.Name = "buttonCalcular";
-            buttonCalcular.Size = new Size(75, 23);
-            buttonCalcular.TabIndex = 11;
-            buttonCalcular.Text = "Calcular";
-            buttonCalcular.UseVisualStyleBackColor = true;
+            buttonCalcularQuad.Location = new Point(204, 254);
+            buttonCalcularQuad.Name = "buttonCalcularQuad";
+            buttonCalcularQuad.Size = new Size(75, 23);
+            buttonCalcularQuad.TabIndex = 11;
+            buttonCalcularQuad.Text = "Calcular";
+            buttonCalcularQuad.UseVisualStyleBackColor = true;
+            buttonCalcularQuad.Click += buttonCalcularQuad_Click;
             // 
             // textBoxPeriQuad
             // 
@@ -259,21 +260,22 @@
             textBox10.Size = new Size(100, 23);
             textBox10.TabIndex = 18;
             // 
-            // button1
+            // buttonCalcularRet
             // 
-            button1.Location = new Point(502, 254);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 24;
-            button1.Text = "Calcular";
-            button1.UseVisualStyleBackColor = true;
+            buttonCalcularRet.Location = new Point(502, 254);
+            buttonCalcularRet.Name = "buttonCalcularRet";
+            buttonCalcularRet.Size = new Size(75, 23);
+            buttonCalcularRet.TabIndex = 24;
+            buttonCalcularRet.Text = "Calcular";
+            buttonCalcularRet.UseVisualStyleBackColor = true;
+            buttonCalcularRet.Click += buttonCalcularRet_Click;
             // 
             // GeoCalc
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(763, 450);
-            Controls.Add(button1);
+            Controls.Add(buttonCalcularRet);
             Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(label12);
@@ -286,7 +288,7 @@
             Controls.Add(textBoxVolQuad);
             Controls.Add(textBoxAreaQuad);
             Controls.Add(textBoxPeriQuad);
-            Controls.Add(buttonCalcular);
+            Controls.Add(buttonCalcularQuad);
             Controls.Add(label6);
             Controls.Add(textBoxAlturaRetangulo);
             Controls.Add(label5);
@@ -317,7 +319,7 @@
         private TextBox textBoxLarguraRetangulo;
         private Label label6;
         private TextBox textBoxAlturaRetangulo;
-        private Button buttonCalcular;
+        private Button buttonCalcularQuad;
         private TextBox textBoxPeriQuad;
         private TextBox textBoxAreaQuad;
         private TextBox textBoxVolQuad;
@@ -330,6 +332,6 @@
         private TextBox textBox8;
         private TextBox textBox9;
         private TextBox textBox10;
-        private Button button1;
+        private Button buttonCalcularRet;
     }
 }

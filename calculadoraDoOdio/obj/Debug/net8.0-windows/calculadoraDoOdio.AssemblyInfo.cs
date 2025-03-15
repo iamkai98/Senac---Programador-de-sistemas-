@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("calculadoraDoOdio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+056ee6d2d4cc80cd81d5f7006d5ecd3c5269bfaa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e37c1b40c240b67b4281811c69bebfc39c317835")]
 [assembly: System.Reflection.AssemblyProductAttribute("calculadoraDoOdio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("calculadoraDoOdio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
