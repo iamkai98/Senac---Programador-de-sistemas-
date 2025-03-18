@@ -1,4 +1,4 @@
-namespace calculadoraDoOdio
+namespace CadastroCliente
 {
     internal static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace Calculadora
+﻿namespace calculadoraDoOdio
 {
     partial class Form1
     {
@@ -28,132 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonResultado = new Button();
             textBoxNumero1 = new TextBox();
-            textBoxNumero2 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            buttonSoma = new Button();
-            buttonSubtracao = new Button();
-            buttonMultiplicar = new Button();
-            buttonDivisao = new Button();
-            labelResultado = new Label();
+            buttonCalcular = new Button();
+            textBoxNumero2 = new TextBox();
             radioButtonSomar = new RadioButton();
             radioButtonSubtrair = new RadioButton();
             radioButtonMultiplicar = new RadioButton();
             radioButtonDividir = new RadioButton();
             textBoxResultado = new TextBox();
-            buttonEntrarIMC = new Button();
-            buttonEntrarPerimetro = new Button();
+            labelResultado = new Label();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
-            // 
-            // buttonResultado
-            // 
-            buttonResultado.Location = new Point(369, 269);
-            buttonResultado.Name = "buttonResultado";
-            buttonResultado.Size = new Size(75, 23);
-            buttonResultado.TabIndex = 0;
-            buttonResultado.Text = "Calcular";
-            buttonResultado.UseVisualStyleBackColor = true;
-            buttonResultado.Click += buttonResultado_Click;
             // 
             // textBoxNumero1
             // 
-            textBoxNumero1.Location = new Point(279, 112);
+            textBoxNumero1.Location = new Point(12, 44);
             textBoxNumero1.Name = "textBoxNumero1";
             textBoxNumero1.Size = new Size(100, 23);
-            textBoxNumero1.TabIndex = 1;
-            textBoxNumero1.TextChanged += textBoxNumero1_TextChanged;
-            // 
-            // textBoxNumero2
-            // 
-            textBoxNumero2.Location = new Point(557, 112);
-            textBoxNumero2.Name = "textBoxNumero2";
-            textBoxNumero2.Size = new Size(100, 23);
-            textBoxNumero2.TabIndex = 2;
-            textBoxNumero2.TextChanged += textBoxNumero2_TextChanged;
+            textBoxNumero1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(135, 115);
+            label1.Location = new Point(12, 26);
             label1.Name = "label1";
-            label1.Size = new Size(138, 15);
-            label1.TabIndex = 3;
-            label1.Text = "Insira o primeiro número";
+            label1.Size = new Size(141, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Insira o primeiro numero:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(412, 115);
+            label2.Location = new Point(12, 83);
             label2.Name = "label2";
-            label2.Size = new Size(139, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Insira o segundo número";
+            label2.Size = new Size(142, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Insira o segundo número:";
             // 
-            // buttonSoma
+            // buttonCalcular
             // 
-            buttonSoma.Enabled = false;
-            buttonSoma.Location = new Point(224, 180);
-            buttonSoma.Name = "buttonSoma";
-            buttonSoma.Size = new Size(75, 23);
-            buttonSoma.TabIndex = 9;
-            buttonSoma.Text = "+";
-            buttonSoma.UseVisualStyleBackColor = true;
-            buttonSoma.UseWaitCursor = true;
-            buttonSoma.Click += button1_Click;
+            buttonCalcular.Location = new Point(23, 266);
+            buttonCalcular.Name = "buttonCalcular";
+            buttonCalcular.Size = new Size(75, 23);
+            buttonCalcular.TabIndex = 3;
+            buttonCalcular.Text = "Calcular";
+            buttonCalcular.UseVisualStyleBackColor = true;
+            buttonCalcular.Click += buttonCalcular_Click;
             // 
-            // buttonSubtracao
+            // textBoxNumero2
             // 
-            buttonSubtracao.Enabled = false;
-            buttonSubtracao.Location = new Point(328, 180);
-            buttonSubtracao.Name = "buttonSubtracao";
-            buttonSubtracao.Size = new Size(75, 23);
-            buttonSubtracao.TabIndex = 10;
-            buttonSubtracao.Text = "-";
-            buttonSubtracao.UseVisualStyleBackColor = true;
-            buttonSubtracao.UseWaitCursor = true;
-            buttonSubtracao.Click += buttonSubtracao_Click;
-            // 
-            // buttonMultiplicar
-            // 
-            buttonMultiplicar.Enabled = false;
-            buttonMultiplicar.Location = new Point(425, 180);
-            buttonMultiplicar.Name = "buttonMultiplicar";
-            buttonMultiplicar.Size = new Size(75, 23);
-            buttonMultiplicar.TabIndex = 11;
-            buttonMultiplicar.Text = "*";
-            buttonMultiplicar.UseVisualStyleBackColor = true;
-            buttonMultiplicar.UseWaitCursor = true;
-            buttonMultiplicar.Click += buttonMultiplicar_Click;
-            // 
-            // buttonDivisao
-            // 
-            buttonDivisao.Enabled = false;
-            buttonDivisao.Location = new Point(525, 180);
-            buttonDivisao.Name = "buttonDivisao";
-            buttonDivisao.Size = new Size(75, 23);
-            buttonDivisao.TabIndex = 12;
-            buttonDivisao.Text = "/";
-            buttonDivisao.UseVisualStyleBackColor = true;
-            buttonDivisao.Click += buttonDivisao_Click;
-            // 
-            // labelResultado
-            // 
-            labelResultado.AutoSize = true;
-            labelResultado.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelResultado.Location = new Point(409, 321);
-            labelResultado.Name = "labelResultado";
-            labelResultado.Size = new Size(0, 13);
-            labelResultado.TabIndex = 5;
+            textBoxNumero2.Location = new Point(12, 101);
+            textBoxNumero2.Name = "textBoxNumero2";
+            textBoxNumero2.Size = new Size(100, 23);
+            textBoxNumero2.TabIndex = 4;
             // 
             // radioButtonSomar
             // 
             radioButtonSomar.AutoSize = true;
-            radioButtonSomar.Location = new Point(223, 225);
+            radioButtonSomar.Location = new Point(12, 166);
             radioButtonSomar.Name = "radioButtonSomar";
             radioButtonSomar.Size = new Size(59, 19);
-            radioButtonSomar.TabIndex = 13;
+            radioButtonSomar.TabIndex = 5;
             radioButtonSomar.TabStop = true;
             radioButtonSomar.Text = "Somar";
             radioButtonSomar.UseVisualStyleBackColor = true;
@@ -162,10 +100,10 @@
             // radioButtonSubtrair
             // 
             radioButtonSubtrair.AutoSize = true;
-            radioButtonSubtrair.Location = new Point(328, 225);
+            radioButtonSubtrair.Location = new Point(12, 191);
             radioButtonSubtrair.Name = "radioButtonSubtrair";
             radioButtonSubtrair.Size = new Size(66, 19);
-            radioButtonSubtrair.TabIndex = 14;
+            radioButtonSubtrair.TabIndex = 6;
             radioButtonSubtrair.TabStop = true;
             radioButtonSubtrair.Text = "Subtrair";
             radioButtonSubtrair.UseVisualStyleBackColor = true;
@@ -174,77 +112,81 @@
             // radioButtonMultiplicar
             // 
             radioButtonMultiplicar.AutoSize = true;
-            radioButtonMultiplicar.Location = new Point(418, 225);
+            radioButtonMultiplicar.Location = new Point(12, 216);
             radioButtonMultiplicar.Name = "radioButtonMultiplicar";
             radioButtonMultiplicar.Size = new Size(82, 19);
-            radioButtonMultiplicar.TabIndex = 15;
+            radioButtonMultiplicar.TabIndex = 7;
             radioButtonMultiplicar.TabStop = true;
             radioButtonMultiplicar.Text = "Multiplicar";
             radioButtonMultiplicar.UseVisualStyleBackColor = true;
-            radioButtonMultiplicar.CheckedChanged += radioButtonMultiplicar_CheckedChanged;
+            radioButtonMultiplicar.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButtonDividir
             // 
             radioButtonDividir.AutoSize = true;
-            radioButtonDividir.Location = new Point(525, 225);
+            radioButtonDividir.Location = new Point(12, 241);
             radioButtonDividir.Name = "radioButtonDividir";
             radioButtonDividir.Size = new Size(59, 19);
-            radioButtonDividir.TabIndex = 16;
+            radioButtonDividir.TabIndex = 8;
             radioButtonDividir.TabStop = true;
             radioButtonDividir.Text = "Dividir";
             radioButtonDividir.UseVisualStyleBackColor = true;
-            radioButtonDividir.CheckedChanged += radioButtonDividir_CheckedChanged;
+            radioButtonDividir.CheckedChanged += radioButtonDivdir_CheckedChanged;
             // 
             // textBoxResultado
             // 
-            textBoxResultado.Location = new Point(357, 321);
+            textBoxResultado.Location = new Point(23, 356);
             textBoxResultado.Name = "textBoxResultado";
             textBoxResultado.ReadOnly = true;
             textBoxResultado.Size = new Size(100, 23);
-            textBoxResultado.TabIndex = 17;
+            textBoxResultado.TabIndex = 9;
             // 
-            // buttonEntrarIMC
+            // labelResultado
             // 
-            buttonEntrarIMC.Location = new Point(660, 405);
-            buttonEntrarIMC.Name = "buttonEntrarIMC";
-            buttonEntrarIMC.Size = new Size(128, 23);
-            buttonEntrarIMC.TabIndex = 18;
-            buttonEntrarIMC.Text = "Calcular IMC";
-            buttonEntrarIMC.UseVisualStyleBackColor = true;
-            buttonEntrarIMC.Click += button1_Click_1;
+            labelResultado.AutoSize = true;
+            labelResultado.Location = new Point(12, 328);
+            labelResultado.Name = "labelResultado";
+            labelResultado.Size = new Size(0, 15);
+            labelResultado.TabIndex = 10;
             // 
-            // buttonEntrarPerimetro
+            // button1
             // 
-            buttonEntrarPerimetro.Location = new Point(661, 375);
-            buttonEntrarPerimetro.Name = "buttonEntrarPerimetro";
-            buttonEntrarPerimetro.Size = new Size(127, 23);
-            buttonEntrarPerimetro.TabIndex = 19;
-            buttonEntrarPerimetro.Text = "Calcular Perímetro";
-            buttonEntrarPerimetro.UseVisualStyleBackColor = true;
-            buttonEntrarPerimetro.Click += button2_Click;
+            button1.Location = new Point(444, 326);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 11;
+            button1.Text = "GeoCalc";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(444, 355);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 12;
+            button2.Text = "Circle";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(buttonEntrarPerimetro);
-            Controls.Add(buttonEntrarIMC);
+            ClientSize = new Size(531, 398);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(labelResultado);
             Controls.Add(textBoxResultado);
             Controls.Add(radioButtonDividir);
             Controls.Add(radioButtonMultiplicar);
             Controls.Add(radioButtonSubtrair);
             Controls.Add(radioButtonSomar);
-            Controls.Add(buttonDivisao);
-            Controls.Add(buttonMultiplicar);
-            Controls.Add(buttonSubtracao);
-            Controls.Add(buttonSoma);
-            Controls.Add(labelResultado);
+            Controls.Add(textBoxNumero2);
+            Controls.Add(buttonCalcular);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBoxNumero2);
             Controls.Add(textBoxNumero1);
-            Controls.Add(buttonResultado);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -253,22 +195,18 @@
 
         #endregion
 
-        private Button buttonResultado;
         private TextBox textBoxNumero1;
-        private TextBox textBoxNumero2;
         private Label label1;
         private Label label2;
-        private Button buttonSoma;
-        private Button buttonSubtracao;
-        private Button buttonMultiplicar;
-        private Button buttonDivisao;
-        private Label labelResultado;
+        private Button buttonCalcular;
+        private TextBox textBoxNumero2;
         private RadioButton radioButtonSomar;
         private RadioButton radioButtonSubtrair;
         private RadioButton radioButtonMultiplicar;
         private RadioButton radioButtonDividir;
         private TextBox textBoxResultado;
-        private Button buttonEntrarIMC;
-        private Button buttonEntrarPerimetro;
+        private Label labelResultado;
+        private Button button1;
+        private Button button2;
     }
 }
