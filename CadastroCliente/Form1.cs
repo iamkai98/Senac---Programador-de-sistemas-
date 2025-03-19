@@ -40,20 +40,144 @@ namespace CadastroCliente
         }
 
 
+        public bool ValidarCampoNome() // Método para avaliar se os campos estão nulos ou vazios
+        {
+            if (string.IsNullOrEmpty(textBoxNome.Text))
+            {
+                labelAviso.Text = "O campo nome é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (textBoxNome.Text.Any(char.IsDigit))
+            {
+                labelAviso.Text = "O campo nome não pode conter números";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (textBoxNome.Text.Length < 3)
+            {
+                labelAviso.Text = "O campo nome deve conter no mínimo 3 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+
+            if(!textBoxNome.Text.Contains(" "))
+            {
+                labelAviso.Text = "O campo nome deve conter nome e sobrenome";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+        }
+
+        public bool ValidarCampoDataNascimento() // Método para avaliar o campo data de nascimento  
+        {
+            if (string.IsNullOrEmpty(maskedTextBoxDataNascimento.Text))
+            {
+                labelAviso.Text = "O campo data de nascimento é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+        }
+
+        public bool ValidarCampoTelefone() // Método para avaliar o campo telefone
+        {
+            if (string.IsNullOrEmpty(maskedTextBoxTelefone.Text))
+            {
+                labelAviso.Text = "O campo telefone é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+        }
+
+        public bool ValidarCampoEmail() // Método para avaliar o campo email
+        {
+            if (string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                labelAviso.Text = "O campo email é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (!textBoxEmail.Text.Contains("@"))
+            {
+                labelAviso.Text = "O campo email deve conter @";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (!textBoxEmail.Text.Contains("."))
+            {
+                labelAviso.Text = "O campo email deve conter .";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+        }
+
+        public bool ValidarCampoGenero()// método para avaliar o campo gênero
+        {
+            if (string.IsNullOrEmpty(comboBoxGenero.Text))
+            {
+                labelAviso.Text = "O campo gênero é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if (!ValidarCampoNome())
+            {
+                return;
+            }
+
+            if (!ValidarCampoDataNascimento())
+            {
+                return;
+            }
+
+            if (!ValidarCampoTelefone())
+            {
+                return;
+            }
+
+            if (!ValidarCampoEmail())
+            {
+                return;
+            }
+
+            if (!ValidarCampoGenero())
+            {
+                return;
+            }
+
             string nome = textBoxNome.Text;
             string dataNascimento = maskedTextBoxDataNascimento.Text;
             string telefone = maskedTextBoxTelefone.Text;
             string email = textBoxEmail.Text;
-            //endereço
-            //genero
+            bool estrangeiro = checkBoxEstrangeiro.Checked;
+            
+            string genero = comboBoxGenero.Text;
             string nomeSocial = textBoxNomeSocial.Text;
             string etnia = comboBoxEtnia.Text;
-            string estrangeiro = checkBoxEstrangeiro.Checked.ToString();
 
-
-
+            TipoCliente tipoCliente;
+            if (radioButtonTipoPF.Checked)
+            {
+                tipoCliente = TipoCliente.PF;
+            }
+            else
+            {
+                tipoCliente = TipoCliente.PJ;
+            }
 
             string cep = maskedTextBoxCEP.Text;
             string logradouro = textBoxLogradouro.Text;

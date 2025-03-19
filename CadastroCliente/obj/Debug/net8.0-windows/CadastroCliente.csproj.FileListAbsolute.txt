@@ -15,3 +15,20 @@ D:\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\ref
 D:\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.pdb
 D:\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.genruntimeconfig.cache
 D:\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\ref\CadastroCliente.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.exe
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.deps.json
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.runtimeconfig.json
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.pdb
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.Form1.resources
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.GenerateResource.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfoInputs.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfo.cs
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.CoreCompileInputs.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.sourcelink.json
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\refint\CadastroCliente.dll
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.pdb
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.genruntimeconfig.cache
+C:\Users\KAIQUE\Documents\Estudos\Programador de sistemas - Senac\Sala de Aula\Senac---Programador-de-sistemas-\CadastroCliente\obj\Debug\net8.0-windows\ref\CadastroCliente.dll

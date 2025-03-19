@@ -22,5 +22,7 @@ namespace CadastroDeCliente
         public TipoCliente Tipo{ get; set; }
     }
 
+    
+
    
 }

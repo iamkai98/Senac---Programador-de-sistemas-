@@ -62,7 +62,20 @@
             textBoxEstado = new TextBox();
             maskedTextBoxCEP = new MaskedTextBox();
             button1 = new Button();
+            labelAviso = new Label();
             label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            label20 = new Label();
+            label22 = new Label();
+            label23 = new Label();
+            label24 = new Label();
+            label25 = new Label();
+            label26 = new Label();
+            label27 = new Label();
+            label28 = new Label();
+            label29 = new Label();
+            label30 = new Label();
             SuspendLayout();
             // 
             // textBoxNome
@@ -74,14 +87,14 @@
             // 
             // textBoxNomeSocial
             // 
-            textBoxNomeSocial.Location = new Point(154, 135);
+            textBoxNomeSocial.Location = new Point(154, 148);
             textBoxNomeSocial.Name = "textBoxNomeSocial";
             textBoxNomeSocial.Size = new Size(183, 23);
             textBoxNomeSocial.TabIndex = 1;
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(281, 85);
+            textBoxEmail.Location = new Point(281, 95);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(183, 23);
             textBoxEmail.TabIndex = 2;
@@ -98,7 +111,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 67);
+            label2.Location = new Point(27, 77);
             label2.Name = "label2";
             label2.Size = new Size(115, 15);
             label2.TabIndex = 4;
@@ -107,7 +120,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(154, 67);
+            label3.Location = new Point(154, 77);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
             label3.TabIndex = 5;
@@ -116,7 +129,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(281, 67);
+            label4.Location = new Point(281, 77);
             label4.Name = "label4";
             label4.Size = new Size(39, 15);
             label4.TabIndex = 6;
@@ -125,16 +138,16 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(27, 117);
+            label5.Location = new Point(27, 130);
             label5.Name = "label5";
             label5.Size = new Size(48, 15);
             label5.TabIndex = 7;
-            label5.Text = "Genero:";
+            label5.Text = "Gênero:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(154, 117);
+            label6.Location = new Point(154, 130);
             label6.Name = "label6";
             label6.Size = new Size(76, 15);
             label6.TabIndex = 8;
@@ -143,7 +156,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(26, 167);
+            label7.Location = new Point(27, 183);
             label7.Name = "label7";
             label7.Size = new Size(36, 15);
             label7.TabIndex = 9;
@@ -152,7 +165,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(153, 167);
+            label8.Location = new Point(154, 183);
             label8.Name = "label8";
             label8.Size = new Size(69, 15);
             label8.TabIndex = 10;
@@ -161,7 +174,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(253, 167);
+            label9.Location = new Point(254, 183);
             label9.Name = "label9";
             label9.Size = new Size(33, 15);
             label9.TabIndex = 11;
@@ -169,7 +182,7 @@
             // 
             // maskedTextBoxDataNascimento
             // 
-            maskedTextBoxDataNascimento.Location = new Point(27, 85);
+            maskedTextBoxDataNascimento.Location = new Point(27, 95);
             maskedTextBoxDataNascimento.Mask = "00/00/0000";
             maskedTextBoxDataNascimento.Name = "maskedTextBoxDataNascimento";
             maskedTextBoxDataNascimento.Size = new Size(115, 23);
@@ -178,7 +191,7 @@
             // 
             // maskedTextBoxTelefone
             // 
-            maskedTextBoxTelefone.Location = new Point(154, 85);
+            maskedTextBoxTelefone.Location = new Point(154, 95);
             maskedTextBoxTelefone.Mask = "(99) 00000-0000";
             maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             maskedTextBoxTelefone.Size = new Size(121, 23);
@@ -187,7 +200,8 @@
             // comboBoxGenero
             // 
             comboBoxGenero.FormattingEnabled = true;
-            comboBoxGenero.Location = new Point(27, 135);
+            comboBoxGenero.Items.AddRange(new object[] { "Masculino", "Feminino ", "Não Binário", "Outro " });
+            comboBoxGenero.Location = new Point(27, 148);
             comboBoxGenero.Name = "comboBoxGenero";
             comboBoxGenero.Size = new Size(121, 23);
             comboBoxGenero.TabIndex = 14;
@@ -195,7 +209,8 @@
             // comboBoxEtnia
             // 
             comboBoxEtnia.FormattingEnabled = true;
-            comboBoxEtnia.Location = new Point(26, 185);
+            comboBoxEtnia.Items.AddRange(new object[] { "Branca", "Negra", "Parda", "Amarela", "Indigena", "Outra" });
+            comboBoxEtnia.Location = new Point(27, 201);
             comboBoxEtnia.Name = "comboBoxEtnia";
             comboBoxEtnia.Size = new Size(100, 23);
             comboBoxEtnia.TabIndex = 15;
@@ -203,7 +218,7 @@
             // checkBoxEstrangeiro
             // 
             checkBoxEstrangeiro.AutoSize = true;
-            checkBoxEstrangeiro.Location = new Point(153, 187);
+            checkBoxEstrangeiro.Location = new Point(154, 203);
             checkBoxEstrangeiro.Name = "checkBoxEstrangeiro";
             checkBoxEstrangeiro.Size = new Size(46, 19);
             checkBoxEstrangeiro.TabIndex = 16;
@@ -213,7 +228,7 @@
             // radioButtonTipoPF
             // 
             radioButtonTipoPF.AutoSize = true;
-            radioButtonTipoPF.Location = new Point(253, 185);
+            radioButtonTipoPF.Location = new Point(254, 201);
             radioButtonTipoPF.Name = "radioButtonTipoPF";
             radioButtonTipoPF.Size = new Size(38, 19);
             radioButtonTipoPF.TabIndex = 17;
@@ -224,7 +239,7 @@
             // radioButtonTipoPJ
             // 
             radioButtonTipoPJ.AutoSize = true;
-            radioButtonTipoPJ.Location = new Point(317, 185);
+            radioButtonTipoPJ.Location = new Point(318, 201);
             radioButtonTipoPJ.Name = "radioButtonTipoPJ";
             radioButtonTipoPJ.Size = new Size(35, 19);
             radioButtonTipoPJ.TabIndex = 18;
@@ -235,7 +250,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(26, 414);
+            label10.Location = new Point(26, 425);
             label10.Name = "label10";
             label10.Size = new Size(72, 15);
             label10.TabIndex = 19;
@@ -244,7 +259,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(26, 461);
+            label11.Location = new Point(26, 478);
             label11.Name = "label11";
             label11.Size = new Size(54, 15);
             label11.TabIndex = 20;
@@ -253,7 +268,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(142, 461);
+            label12.Location = new Point(142, 478);
             label12.Name = "label12";
             label12.Size = new Size(87, 15);
             label12.TabIndex = 21;
@@ -262,7 +277,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(26, 362);
+            label13.Location = new Point(26, 373);
             label13.Name = "label13";
             label13.Size = new Size(41, 15);
             label13.TabIndex = 22;
@@ -271,7 +286,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(26, 316);
+            label14.Location = new Point(27, 320);
             label14.Name = "label14";
             label14.Size = new Size(64, 15);
             label14.TabIndex = 23;
@@ -280,7 +295,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(210, 316);
+            label15.Location = new Point(211, 320);
             label15.Name = "label15";
             label15.Size = new Size(48, 15);
             label15.TabIndex = 24;
@@ -297,42 +312,42 @@
             // 
             // textBoxLogradouro
             // 
-            textBoxLogradouro.Location = new Point(27, 432);
+            textBoxLogradouro.Location = new Point(27, 443);
             textBoxLogradouro.Name = "textBoxLogradouro";
             textBoxLogradouro.Size = new Size(254, 23);
             textBoxLogradouro.TabIndex = 26;
             // 
             // textBoxNumero
             // 
-            textBoxNumero.Location = new Point(27, 479);
+            textBoxNumero.Location = new Point(27, 496);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(92, 23);
             textBoxNumero.TabIndex = 27;
             // 
             // textBoxComplemento
             // 
-            textBoxComplemento.Location = new Point(142, 479);
+            textBoxComplemento.Location = new Point(142, 496);
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(223, 23);
             textBoxComplemento.TabIndex = 28;
             // 
             // textBoxBairro
             // 
-            textBoxBairro.Location = new Point(27, 380);
+            textBoxBairro.Location = new Point(27, 391);
             textBoxBairro.Name = "textBoxBairro";
             textBoxBairro.Size = new Size(155, 23);
             textBoxBairro.TabIndex = 29;
             // 
             // textBoxMunicipio
             // 
-            textBoxMunicipio.Location = new Point(27, 334);
+            textBoxMunicipio.Location = new Point(28, 338);
             textBoxMunicipio.Name = "textBoxMunicipio";
             textBoxMunicipio.Size = new Size(155, 23);
             textBoxMunicipio.TabIndex = 30;
             // 
             // textBoxEstado
             // 
-            textBoxEstado.Location = new Point(210, 334);
+            textBoxEstado.Location = new Point(211, 338);
             textBoxEstado.Name = "textBoxEstado";
             textBoxEstado.Size = new Size(155, 23);
             textBoxEstado.TabIndex = 31;
@@ -347,7 +362,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(211, 531);
+            button1.Location = new Point(211, 546);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 33;
@@ -355,21 +370,163 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // labelAviso
+            // 
+            labelAviso.AutoSize = true;
+            labelAviso.Location = new Point(230, 578);
+            labelAviso.Name = "labelAviso";
+            labelAviso.Size = new Size(0, 15);
+            labelAviso.TabIndex = 34;
+            // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(231, 567);
+            label17.ForeColor = Color.Red;
+            label17.Location = new Point(121, 24);
             label17.Name = "label17";
-            label17.Size = new Size(44, 15);
-            label17.TabIndex = 34;
-            label17.Text = "label17";
+            label17.Size = new Size(12, 15);
+            label17.TabIndex = 35;
+            label17.Text = "*";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.ForeColor = Color.Red;
+            label18.Location = new Point(137, 78);
+            label18.Name = "label18";
+            label18.Size = new Size(12, 15);
+            label18.TabIndex = 36;
+            label18.Text = "*";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.ForeColor = Color.Red;
+            label19.Location = new Point(205, 78);
+            label19.Name = "label19";
+            label19.Size = new Size(12, 15);
+            label19.TabIndex = 37;
+            label19.Text = "*";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.ForeColor = Color.Red;
+            label20.Location = new Point(317, 78);
+            label20.Name = "label20";
+            label20.Size = new Size(12, 15);
+            label20.TabIndex = 38;
+            label20.Text = "*";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.ForeColor = Color.Red;
+            label22.Location = new Point(72, 130);
+            label22.Name = "label22";
+            label22.Size = new Size(12, 15);
+            label22.TabIndex = 40;
+            label22.Text = "*";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.ForeColor = Color.Red;
+            label23.Location = new Point(58, 183);
+            label23.Name = "label23";
+            label23.Size = new Size(12, 15);
+            label23.TabIndex = 41;
+            label23.Text = "*";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.ForeColor = Color.Red;
+            label24.Location = new Point(53, 268);
+            label24.Name = "label24";
+            label24.Size = new Size(12, 15);
+            label24.TabIndex = 42;
+            label24.Text = "*";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.ForeColor = Color.Red;
+            label25.Location = new Point(86, 321);
+            label25.Name = "label25";
+            label25.Size = new Size(12, 15);
+            label25.TabIndex = 43;
+            label25.Text = "*";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.ForeColor = Color.Red;
+            label26.Location = new Point(251, 320);
+            label26.Name = "label26";
+            label26.Size = new Size(12, 15);
+            label26.TabIndex = 44;
+            label26.Text = "*";
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.ForeColor = Color.Red;
+            label27.Location = new Point(63, 373);
+            label27.Name = "label27";
+            label27.Size = new Size(12, 15);
+            label27.TabIndex = 45;
+            label27.Text = "*";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.ForeColor = Color.Red;
+            label28.Location = new Point(94, 425);
+            label28.Name = "label28";
+            label28.Size = new Size(12, 15);
+            label28.TabIndex = 46;
+            label28.Text = "*";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.ForeColor = Color.Red;
+            label29.Location = new Point(283, 183);
+            label29.Name = "label29";
+            label29.Size = new Size(12, 15);
+            label29.TabIndex = 47;
+            label29.Text = "*";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.ForeColor = Color.Red;
+            label30.Location = new Point(75, 478);
+            label30.Name = "label30";
+            label30.Size = new Size(12, 15);
+            label30.TabIndex = 48;
+            label30.Text = "*";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(518, 600);
+            Controls.Add(label30);
+            Controls.Add(label29);
+            Controls.Add(label28);
+            Controls.Add(label27);
+            Controls.Add(label26);
+            Controls.Add(label25);
+            Controls.Add(label24);
+            Controls.Add(label23);
+            Controls.Add(label22);
+            Controls.Add(label20);
+            Controls.Add(label19);
+            Controls.Add(label18);
             Controls.Add(label17);
+            Controls.Add(labelAviso);
             Controls.Add(button1);
             Controls.Add(maskedTextBoxCEP);
             Controls.Add(textBoxEstado);
@@ -446,6 +603,19 @@
         private TextBox textBoxEstado;
         private MaskedTextBox maskedTextBoxCEP;
         private Button button1;
+        private Label labelAviso;
         private Label label17;
+        private Label label18;
+        private Label label19;
+        private Label label20;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private Label label25;
+        private Label label26;
+        private Label label27;
+        private Label label28;
+        private Label label29;
+        private Label label30;
     }
 }
