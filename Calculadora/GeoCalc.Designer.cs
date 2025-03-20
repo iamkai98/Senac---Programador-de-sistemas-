@@ -1,4 +1,4 @@
-﻿namespace calculadoraDoOdio
+﻿namespace calculadora
 {
     partial class GeoCalc
     {

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Senac---Programador-de-sistemas-\\calculadoraDoOdio\\calculadoraDoOdio.csproj",
-      "projectName": "calculadoraDoOdio",
-      "projectPath": "D:\\Senac---Programador-de-sistemas-\\calculadoraDoOdio\\calculadoraDoOdio.csproj",
+      "projectUniqueName": "D:\\Senac---Programador-de-sistemas-\\Calculadora\\calculadora.csproj",
+      "projectName": "calculadora",
+      "projectPath": "D:\\Senac---Programador-de-sistemas-\\Calculadora\\calculadora.csproj",
       "packagesPath": "C:\\Users\\kaique.pconceicao1\\.nuget\\packages\\",
-      "outputPath": "D:\\Senac---Programador-de-sistemas-\\calculadoraDoOdio\\obj\\",
+      "outputPath": "D:\\Senac---Programador-de-sistemas-\\Calculadora\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

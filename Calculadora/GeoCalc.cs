@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace calculadoraDoOdio
+namespace calculadora
 {
     public partial class GeoCalc : Form
     {

@@ -196,6 +196,7 @@
             maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             maskedTextBoxTelefone.Size = new Size(121, 23);
             maskedTextBoxTelefone.TabIndex = 13;
+            maskedTextBoxTelefone.MaskInputRejected += maskedTextBoxTelefone_MaskInputRejected;
             // 
             // comboBoxGenero
             // 
@@ -373,7 +374,7 @@
             // labelAviso
             // 
             labelAviso.AutoSize = true;
-            labelAviso.Location = new Point(230, 578);
+            labelAviso.Location = new Point(142, 576);
             labelAviso.Name = "labelAviso";
             labelAviso.Size = new Size(0, 15);
             labelAviso.TabIndex = 34;

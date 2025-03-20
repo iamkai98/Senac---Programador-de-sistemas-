@@ -1,4 +1,4 @@
-namespace calculadoraDoOdio
+namespace calculadora
 {
     public partial class Form1 : Form
     {

@@ -42,7 +42,7 @@ namespace CadastroCliente
 
         public bool ValidarCampoNome() // Método para avaliar se os campos estão nulos ou vazios
         {
-            if (string.IsNullOrEmpty(textBoxNome.Text))
+            if (string.IsNullOrWhiteSpace(textBoxNome.Text))
             {
                 labelAviso.Text = "O campo nome é obrigatório";
                 labelAviso.ForeColor = Color.Red;
@@ -61,7 +61,7 @@ namespace CadastroCliente
                 return false;
             }
 
-            if(!textBoxNome.Text.Contains(" "))
+            if (!textBoxNome.Text.Contains(" "))
             {
                 labelAviso.Text = "O campo nome deve conter nome e sobrenome";
                 labelAviso.ForeColor = Color.Red;
@@ -73,43 +73,77 @@ namespace CadastroCliente
 
         public bool ValidarCampoDataNascimento() // Método para avaliar o campo data de nascimento  
         {
-            if (string.IsNullOrEmpty(maskedTextBoxDataNascimento.Text))
+            if (!maskedTextBoxDataNascimento.MaskFull) // verifica se o campo está preenchido completamente
             {
                 labelAviso.Text = "O campo data de nascimento é obrigatório";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
+            if (!DateTime.TryParse(maskedTextBoxDataNascimento.Text, out DateTime dataNascimento)) // Verifica se a data é válida. Exemplo "32/01/2024" não será uma data válida.
+            {
+                labelAviso.Text = "Data de nascimento inválida";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+
+            }
+            if (dataNascimento > DateTime.Now) // Verifica se a data de nascimento é maior que a data atual. Exemplo: "01/01/2024" não será uma data válida.
+            {
+                labelAviso.Text = "A data de nascimento não pode ser maior que a data atual";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+
+            int idade = DateTime.Now.Year - dataNascimento.Year; // Calcula a idade do cliente para saber se o cliente é maior de idade
+            if (idade < 18)
+            {
+                labelAviso.Text = "O cliente deve ser maior de idade";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            
             labelAviso.Text = "";
             return true;
         }
 
         public bool ValidarCampoTelefone() // Método para avaliar o campo telefone
         {
-            if (string.IsNullOrEmpty(maskedTextBoxTelefone.Text))
+            if (!maskedTextBoxTelefone.MaskFull) // verifica se o campo está preenchido completamente
             {
                 labelAviso.Text = "O campo telefone é obrigatório";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
+
+            //if (!maskedTextBoxTelefone.Text.
+            //{
+
+            //}
             labelAviso.Text = "";
             return true;
         }
 
         public bool ValidarCampoEmail() // Método para avaliar o campo email
         {
-            if (string.IsNullOrEmpty(textBoxEmail.Text))
+            if (string.IsNullOrWhiteSpace(textBoxEmail.Text)) // verifica se o campo está preenchido
             {
                 labelAviso.Text = "O campo email é obrigatório";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            if (!textBoxEmail.Text.Contains("@"))
+            if (textBoxEmail.Text.Length < 10) // verifica se o campo tem no mínimo 10 caracteres
+            {
+                labelAviso.Text = "O campo email deve conter no mínimo 9 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+
+            if (!textBoxEmail.Text.Contains("@")) // verifica se o campo contém "@"
             {
                 labelAviso.Text = "O campo email deve conter @";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            if (!textBoxEmail.Text.Contains("."))
+            if (!textBoxEmail.Text.Contains("."))// verifica se o campo contém "."
             {
                 labelAviso.Text = "O campo email deve conter .";
                 labelAviso.ForeColor = Color.Red;
@@ -121,16 +155,42 @@ namespace CadastroCliente
 
         public bool ValidarCampoGenero()// método para avaliar o campo gênero
         {
-            if (string.IsNullOrEmpty(comboBoxGenero.Text))
+            if (string.IsNullOrEmpty(comboBoxGenero.Text)) // verifica se o campo está preenchido
             {
                 labelAviso.Text = "O campo gênero é obrigatório";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
+            if (comboBoxGenero.SelectedIndex == 0)
+            {
+                labelAviso.Text = "Selecione uma opção no campo gênero";
+            }
+
             labelAviso.Text = "";
             return true;
         }
-        
+
+
+        public bool ValidarNomeSocial()
+        {
+            if (textBoxNomeSocial.Text.Any(char.IsDigit))
+            {
+                labelAviso.Text = "O campo nome social não pode conter números";
+                labelAviso.ForeColor = Color.Red;
+            }
+
+            if (textBoxNomeSocial.Text.Any(char.IsLetter)) //se caso o textbox do nome social tiver alguma letra, o usuário deve colocar no mínimo 3 letras 
+            {
+                if (textBoxNomeSocial.Text.Length < 3)
+                {
+                    labelAviso.Text = "O campo nome social deve conter no mínimo 3 caracteres";
+                    labelAviso.ForeColor = Color.Red;
+                }
+            }
+            
+            return true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -158,13 +218,17 @@ namespace CadastroCliente
             {
                 return;
             }
+            if (!ValidarNomeSocial())
+            {
+                return;
+            }
 
             string nome = textBoxNome.Text;
             string dataNascimento = maskedTextBoxDataNascimento.Text;
             string telefone = maskedTextBoxTelefone.Text;
             string email = textBoxEmail.Text;
             bool estrangeiro = checkBoxEstrangeiro.Checked;
-            
+
             string genero = comboBoxGenero.Text;
             string nomeSocial = textBoxNomeSocial.Text;
             string etnia = comboBoxEtnia.Text;
@@ -185,7 +249,12 @@ namespace CadastroCliente
             string municipio = textBoxMunicipio.Text;
             string estado = textBoxEstado.Text;
 
-             
+
+        }
+
+        private void maskedTextBoxTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 
