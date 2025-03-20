@@ -70,7 +70,6 @@ namespace CadastroCliente
             labelAviso.Text = "";
             return true;
         }
-
         public bool ValidarCampoDataNascimento() // Método para avaliar o campo data de nascimento  
         {
             if (!maskedTextBoxDataNascimento.MaskFull) // verifica se o campo está preenchido completamente
@@ -79,6 +78,16 @@ namespace CadastroCliente
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
+
+            string DataNascimentoValida = maskedTextBoxDataNascimento.Text.Replace("/", "").Replace(" ", "").Trim();
+
+            if (DataNascimentoValida.Distinct().Count() == 1) //
+            {
+                labelAviso.Text = "O campo data de nascimento não pode conter todos os dígitos repetidos";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+
             if (!DateTime.TryParse(maskedTextBoxDataNascimento.Text, out DateTime dataNascimento)) // Verifica se a data é válida. Exemplo "32/01/2024" não será uma data válida.
             {
                 labelAviso.Text = "Data de nascimento inválida";
@@ -100,28 +109,37 @@ namespace CadastroCliente
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            
+
             labelAviso.Text = "";
             return true;
+            //método Distict.().Count() tem a função de contar quantos valores únicos existem euma coleção 
+            // Distinct = remove os número repetidos, matendo apenas os diferentes
+            // Count = conta quantos números únicos restaram
+            // ==1 se sóbrou 1 número único, significa que o usuário digitou o mesmo número repetido várias vezes
         }
-
         public bool ValidarCampoTelefone() // Método para avaliar o campo telefone
         {
             if (!maskedTextBoxTelefone.MaskFull) // verifica se o campo está preenchido completamente
             {
-                labelAviso.Text = "O campo telefone é obrigatório";
+                labelAviso.Text = "O campo telefone é obrigatório, preencha corretamente";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
 
-            //if (!maskedTextBoxTelefone.Text.
-            //{
-
-            //}
+            string verificarNumerorepetido = maskedTextBoxTelefone.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "").Trim();
+            if (verificarNumerorepetido.Distinct().Count() == 1)
+            {
+                labelAviso.Text = "O campo número de telefone não pode conter todos os dígitos repetidos";
+                labelAviso.ForeColor= Color.Red;
+                return false;
+            }
             labelAviso.Text = "";
             return true;
+            //método Distict.().Count() tem a função de contar quantos valores únicos existem euma coleção 
+            // Distinct = remove os número repetidos, matendo apenas os diferentes
+            // Count = conta quantos números únicos restaram
+            // ==1 se sóbrou 1 número único, significa que o usuário digitou o mesmo número repetido várias vezes
         }
-
         public bool ValidarCampoEmail() // Método para avaliar o campo email
         {
             if (string.IsNullOrWhiteSpace(textBoxEmail.Text)) // verifica se o campo está preenchido
@@ -130,7 +148,7 @@ namespace CadastroCliente
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            if (textBoxEmail.Text.Length < 10) // verifica se o campo tem no mínimo 10 caracteres
+            if (textBoxEmail.Text.Length < 10) // verifica se o campo tem no mínimo 9 caracteres
             {
                 labelAviso.Text = "O campo email deve conter no mínimo 9 caracteres";
                 labelAviso.ForeColor = Color.Red;
@@ -152,76 +170,170 @@ namespace CadastroCliente
             labelAviso.Text = "";
             return true;
         }
-
-        public bool ValidarCampoGenero()// método para avaliar o campo gênero
+        public bool ValidarCampoGenero()// Método para avaliar o campo gênero
         {
-            if (string.IsNullOrEmpty(comboBoxGenero.Text)) // verifica se o campo está preenchido
+            if (string.IsNullOrEmpty(comboBoxGenero.Text)) // verifica se o campo está preenchido com pelo menos uma opção do comboBox
             {
                 labelAviso.Text = "O campo gênero é obrigatório";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            if (comboBoxGenero.SelectedIndex == 0)
-            {
-                labelAviso.Text = "Selecione uma opção no campo gênero";
-            }
-
             labelAviso.Text = "";
             return true;
         }
-
-
-        public bool ValidarNomeSocial()
+        public bool ValidarEtnia() // Método para avaliar o campo etnia
         {
-            if (textBoxNomeSocial.Text.Any(char.IsDigit))
+            if (string.IsNullOrWhiteSpace(comboBoxEtnia.Text)) //verifica se o campo está nulo ou com espaços em branco 
+            {
+                labelAviso.Text = "O campo etnia é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            return true;
+        }
+        public bool ValidarNomeSocial() //Método para avaliar o campo nome social 
+        {
+            if (string.IsNullOrWhiteSpace(textBoxNomeSocial.Text))
+            {
+                return true; //se caso não for selelcionado retorna true, já que não é obrigatório  
+            }
+
+            if (textBoxNomeSocial.Text.Any(char.IsDigit)) // se caso o usuário digitar algo, não será permitido números
             {
                 labelAviso.Text = "O campo nome social não pode conter números";
                 labelAviso.ForeColor = Color.Red;
+                return false;
             }
 
-            if (textBoxNomeSocial.Text.Any(char.IsLetter)) //se caso o textbox do nome social tiver alguma letra, o usuário deve colocar no mínimo 3 letras 
+            if (textBoxNomeSocial.Text.Length < 3)// se o usuário digitar algo, o texbox irá permitir no mínimo 3 caracteres 
             {
-                if (textBoxNomeSocial.Text.Length < 3)
-                {
-                    labelAviso.Text = "O campo nome social deve conter no mínimo 3 caracteres";
-                    labelAviso.ForeColor = Color.Red;
-                }
+                labelAviso.Text = "O campo nome social deve conter no mínimo 3 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
             }
-            
+            labelAviso.Text = "";
             return true;
         }
+        public bool ValidarTipo() //Método para avaliar o campo tipo 
+        {
+            if (!radioButtonTipoPF.Checked && !radioButtonTipoPJ.Checked)
+            {
+                labelAviso.Text = "Preencha alguma das opções no campo tipo";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+        }
+        public bool ValidarEstrangeiro() //Método para avaliar o campo estrangeiro 
+        {
+            return true;
+        }
+        public bool ValidarCep()
+        {
+            string CEP = maskedTextBoxCEP.Text.Replace("-", "").Trim(); // "Replace" é um método que remove o traço, deixando apenas os números do campo CEP
+                                                                        // "Trim" é um método que remove espaços extras ao redor do texto 
+
+            if (!maskedTextBoxCEP.MaskFull)
+            {
+                labelAviso.Text = "O campo CEP é obrigatório, preencha corretamente";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (CEP.Distinct().Count() == 1)  
+            {
+                labelAviso.Text = "Digite um CEP válido";
+                labelAviso.ForeColor = Color.Red; 
+                return false;
+            }
+            labelAviso.Text = "";
+            return true;
+
+            //método Distict.().Count() tem a função de contar quantos valores únicos existem euma coleção 
+            // Distinct = remove os número repetidos, matendo apenas os diferentes
+            // Count = conta quantos números únicos restaram
+            // ==1 se sóbrou 1 número único, significa que o usuário digitou o mesmo número repetido várias vezes
+        }
+        public bool ValidarMunicipio()
+        {
+            if(string.IsNullOrWhiteSpace(textBoxMunicipio.Text))
+            {
+                labelAviso.Text = "O campo municipio é obrigatório";
+                labelAviso.ForeColor= Color.Red;
+            }
+            return true;
+        }
+        public bool ValidarEstado()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxEstado.Text))
+            {
+                labelAviso.Text = "O campo estado é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+            }
+            return true;
+        }
+
+        public bool ValidarBairro()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxBairro.Text))
+            {
+                labelAviso.Text = "O campo bairro é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+            }
+            return true;
+        }
+        public bool ValidarLogradouro()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxLogradouro.Text))
+            {
+                labelAviso.Text = "O campo logradouro é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+            }
+            return true;
+        }
+        public bool ValidarNumero()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxNumero.Text))
+            {
+                labelAviso.Text = "O campo numero é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+            }
+            return true;
+        }
+        public bool ValidarComplemento()
+        {
+           
+            return true;
+        }
+
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (!ValidarCampoNome())
+            if (!ValidarCampoNome() ||
+                !ValidarCampoDataNascimento() ||
+                !ValidarCampoTelefone() ||
+                !ValidarCampoEmail() ||
+                !ValidarCampoGenero() ||
+                !ValidarEtnia() ||
+                !ValidarNomeSocial() ||
+                !ValidarTipo() ||
+                !ValidarEstrangeiro() ||
+                !ValidarCep () ||
+                !ValidarMunicipio()||
+                !ValidarEstado () ||
+                !ValidarBairro () ||
+                !ValidarLogradouro() ||
+                !ValidarNumero () ||
+                !ValidarComplemento())
             {
                 return;
             }
 
-            if (!ValidarCampoDataNascimento())
-            {
-                return;
-            }
 
-            if (!ValidarCampoTelefone())
-            {
-                return;
-            }
-
-            if (!ValidarCampoEmail())
-            {
-                return;
-            }
-
-            if (!ValidarCampoGenero())
-            {
-                return;
-            }
-            if (!ValidarNomeSocial())
-            {
-                return;
-            }
 
             string nome = textBoxNome.Text;
             string dataNascimento = maskedTextBoxDataNascimento.Text;
