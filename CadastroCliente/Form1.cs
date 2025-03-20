@@ -12,12 +12,12 @@ namespace CadastroCliente
 
             //Cliente Maria 
             EnderecoCliente EnderecoMaria = new EnderecoCliente() { Logradouro = "Rua 1", Numero = "123", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Cliente Maria = new Cliente() { Id = 1, Nome = "Maria Aparecida", DataNascimento = "26/09/2000", Telefone = "55 11 95687-5246", Email = "maria_aparecida@email.com", Endereco = EnderecoMaria, Genero = GeneroCliente.Feminino, NomeSocial = "", Etnia = EtniaCliente.Negra, Estrangeiro = false, Tipo = TipoCliente.PF };
+            Cliente Maria = new Cliente() { Id = 1, Nome = "Maria Aparecida", DataNascimento = "26/09/2000", Telefone = "11 96688-5246", Email = "maria_aparecida@email.com", Endereco = EnderecoMaria, Genero = GeneroCliente.Feminino, NomeSocial = "", Etnia = EtniaCliente.Negra, Estrangeiro = false, Tipo = TipoCliente.PF };
             clientes.Add(Maria);
 
             //Cliente José
             EnderecoCliente EnderecoJose = new EnderecoCliente() { Logradouro = "Rua 2", Numero = "456", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Cliente Jose = new Cliente() { Id = 2, Nome = "José da Silva", DataNascimento = "15/07/1990", Telefone = "55 11 95687-5246", Email = "jose_da_silva@email.com", Endereco = EnderecoJose, Genero = GeneroCliente.Masculino, NomeSocial = "", Etnia = EtniaCliente.Indigena, Estrangeiro = false, Tipo = TipoCliente.PJ };
+            Cliente Jose = new Cliente() { Id = 2, Nome = "José da Silva", DataNascimento = "15/07/1990", Telefone = " 11 95687-5247", Email = "jose_da_silva@email.com", Endereco = EnderecoJose, Genero = GeneroCliente.Masculino, NomeSocial = "", Etnia = EtniaCliente.Indigena, Estrangeiro = false, Tipo = TipoCliente.PJ };
             clientes.Add(Jose);
 
             //Cliente John Marye
@@ -27,7 +27,7 @@ namespace CadastroCliente
                 Id = 789123,
                 Nome = "John Marye",
                 DataNascimento = "10/05/1980",
-                Telefone = "55 11 95687-5246",
+                Telefone = "11 95687-6241",
                 Email = "josemaria@email.com",
                 Endereco = EnderecoJoaoMaria,
                 Genero = GeneroCliente.Masculino,
@@ -130,7 +130,7 @@ namespace CadastroCliente
             if (verificarNumerorepetido.Distinct().Count() == 1)
             {
                 labelAviso.Text = "O campo número de telefone não pode conter todos os dígitos repetidos";
-                labelAviso.ForeColor= Color.Red;
+                labelAviso.ForeColor = Color.Red;
                 return false;
             }
             labelAviso.Text = "";
@@ -157,13 +157,13 @@ namespace CadastroCliente
 
             if (!textBoxEmail.Text.Contains("@")) // verifica se o campo contém "@"
             {
-                labelAviso.Text = "O campo email deve conter @";
+                labelAviso.Text = "O campo email deve conter '@'";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
             if (!textBoxEmail.Text.Contains("."))// verifica se o campo contém "."
             {
-                labelAviso.Text = "O campo email deve conter .";
+                labelAviso.Text = "O campo email deve conter '.'";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
@@ -218,7 +218,7 @@ namespace CadastroCliente
         {
             if (!radioButtonTipoPF.Checked && !radioButtonTipoPJ.Checked)
             {
-                labelAviso.Text = "Preencha alguma das opções no campo tipo";
+                labelAviso.Text = "Escolha uma das opções no campo tipo";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
@@ -240,10 +240,10 @@ namespace CadastroCliente
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            if (CEP.Distinct().Count() == 1)  
+            if (CEP.Distinct().Count() == 1)
             {
-                labelAviso.Text = "Digite um CEP válido";
-                labelAviso.ForeColor = Color.Red; 
+                labelAviso.Text = "O campo CEP não pode conter todos os dígitos repetidos";
+                labelAviso.ForeColor = Color.Red;
                 return false;
             }
             labelAviso.Text = "";
@@ -256,20 +256,43 @@ namespace CadastroCliente
         }
         public bool ValidarMunicipio()
         {
-            if(string.IsNullOrWhiteSpace(textBoxMunicipio.Text))
+            if (string.IsNullOrWhiteSpace(textBoxMunicipio.Text))
             {
-                labelAviso.Text = "O campo municipio é obrigatório";
-                labelAviso.ForeColor= Color.Red;
+                labelAviso.Text = "O campo município é obrigatório";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+
+            if (textBoxMunicipio.Text.Length < 4)
+            {
+                labelAviso.Text = "O campo município deve ter no mínimo 4 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
             }
             return true;
         }
         public bool ValidarEstado()
         {
-            if (string.IsNullOrWhiteSpace(textBoxEstado.Text))
+            if (string.IsNullOrWhiteSpace(comboBoxEstado.Text))
             {
                 labelAviso.Text = "O campo estado é obrigatório";
                 labelAviso.ForeColor = Color.Red;
+                return false;
             }
+
+            if(comboBoxEstado.Text.Any(char.IsNumber))
+            {
+                labelAviso.Text = "O campo estado não pode ter número";
+                labelAviso.ForeColor = Color.Red; 
+                return false;
+            }
+            if (comboBoxEstado.Text.Length < 4)
+            {
+                labelAviso.Text = "O campo estado deve ter no mínimo 4 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+
             return true;
         }
 
@@ -279,6 +302,19 @@ namespace CadastroCliente
             {
                 labelAviso.Text = "O campo bairro é obrigatório";
                 labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (textBoxBairro.Text.Length < 3)
+            {
+                labelAviso.Text = "O campo estado deve ter no mínimo 3 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if(textBoxBairro.Text.Any(char.IsNumber))
+            {
+                labelAviso.Text = "Digite um bairro válido (ex:Jardim Guarujá, Centro, Santo Amaro";
+                labelAviso.ForeColor = Color.Red;
+                return false;
             }
             return true;
         }
@@ -288,6 +324,19 @@ namespace CadastroCliente
             {
                 labelAviso.Text = "O campo logradouro é obrigatório";
                 labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (textBoxLogradouro.Text.Length < 4)
+            {
+                labelAviso.Text = "O campo logradouro deve ter no mínimo 4 caracteres";
+                labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (textBoxLogradouro.Text.Any(char.IsNumber))
+            {
+                labelAviso.Text = "Digite um logradouro válido (ex:Avenida Brasil)";
+                labelAviso.ForeColor = Color.Red;
+                return false;
             }
             return true;
         }
@@ -297,18 +346,21 @@ namespace CadastroCliente
             {
                 labelAviso.Text = "O campo numero é obrigatório";
                 labelAviso.ForeColor = Color.Red;
+                return false;
+            }
+            if (!textBoxNumero.Text.Any(char.IsNumber) || textBoxNumero.Text.Length > 6)
+            {
+                labelAviso.Text = "Digite um número de residência válido";
+                labelAviso.ForeColor = Color.Red;
+                return false;
             }
             return true;
         }
         public bool ValidarComplemento()
         {
-           
+
             return true;
         }
-
-
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -322,29 +374,28 @@ namespace CadastroCliente
                 !ValidarNomeSocial() ||
                 !ValidarTipo() ||
                 !ValidarEstrangeiro() ||
-                !ValidarCep () ||
-                !ValidarMunicipio()||
-                !ValidarEstado () ||
-                !ValidarBairro () ||
+                !ValidarCep() ||
+                !ValidarMunicipio() ||
+                !ValidarEstado() ||
+                !ValidarBairro() ||
                 !ValidarLogradouro() ||
-                !ValidarNumero () ||
+                !ValidarNumero() ||
                 !ValidarComplemento())
             {
                 return;
             }
 
 
-
+            int ID;
             string nome = textBoxNome.Text;
             string dataNascimento = maskedTextBoxDataNascimento.Text;
             string telefone = maskedTextBoxTelefone.Text;
             string email = textBoxEmail.Text;
-            bool estrangeiro = checkBoxEstrangeiro.Checked;
-
             string genero = comboBoxGenero.Text;
-            string nomeSocial = textBoxNomeSocial.Text;
-            string etnia = comboBoxEtnia.Text;
 
+            EtniaCliente etniaCliente = (EtniaCliente)comboBoxEtnia.SelectedItem;
+
+            string nomeSocial = textBoxNomeSocial.Text;
             TipoCliente tipoCliente;
             if (radioButtonTipoPF.Checked)
             {
@@ -355,15 +406,47 @@ namespace CadastroCliente
                 tipoCliente = TipoCliente.PJ;
             }
 
+            bool estrangeiro = checkBoxEstrangeiro.Checked;
+
             string cep = maskedTextBoxCEP.Text;
+            string municipio = textBoxMunicipio.Text;
+
+            string estado = comboBoxEstado.SelectedItem?.ToString();
+
             string logradouro = textBoxLogradouro.Text;
             string bairro = textBoxBairro.Text;
-            string municipio = textBoxMunicipio.Text;
-            string estado = textBoxEstado.Text;
 
+            bool EmailEncontrado = false;
+            bool TelefoneEncontrado = false;
+ 
 
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                if (email == clientes[i].Email)
+                {
+                    EmailEncontrado = true;
+                    break;
+                    
+                }
+                if (telefone == clientes[i].Telefone)
+                {
+                    TelefoneEncontrado = true;
+                    break;
+                }
+            }
+            if (!EmailEncontrado)
+            {
+                labelAviso.Text = "Email cadastrado";
+            }
+            else if (!TelefoneEncontrado)
+            {
+                labelAviso.Text = "Telefone cadastrado";
+            }
+            else
+            {
+                labelAviso.Text = ""
+            }
         }
-
         private void maskedTextBoxTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 

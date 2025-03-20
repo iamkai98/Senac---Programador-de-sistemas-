@@ -59,7 +59,6 @@
             textBoxComplemento = new TextBox();
             textBoxBairro = new TextBox();
             textBoxMunicipio = new TextBox();
-            textBoxEstado = new TextBox();
             maskedTextBoxCEP = new MaskedTextBox();
             button1 = new Button();
             labelAviso = new Label();
@@ -76,6 +75,7 @@
             label28 = new Label();
             label29 = new Label();
             label30 = new Label();
+            comboBoxEstado = new ComboBox();
             SuspendLayout();
             // 
             // textBoxNome
@@ -293,7 +293,7 @@
             label14.Name = "label14";
             label14.Size = new Size(64, 15);
             label14.TabIndex = 23;
-            label14.Text = "Munícipio:";
+            label14.Text = "Município:";
             // 
             // label15
             // 
@@ -347,13 +347,6 @@
             textBoxMunicipio.Name = "textBoxMunicipio";
             textBoxMunicipio.Size = new Size(155, 23);
             textBoxMunicipio.TabIndex = 30;
-            // 
-            // textBoxEstado
-            // 
-            textBoxEstado.Location = new Point(382, 333);
-            textBoxEstado.Name = "textBoxEstado";
-            textBoxEstado.Size = new Size(155, 23);
-            textBoxEstado.TabIndex = 31;
             // 
             // maskedTextBoxCEP
             // 
@@ -511,11 +504,22 @@
             label30.TabIndex = 48;
             label30.Text = "*";
             // 
+            // comboBoxEstado
+            // 
+            comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxEstado.FormattingEnabled = true;
+            comboBoxEstado.Items.AddRange(new object[] { "Acre  ", "Alagoas  ", "Amapá  ", "Amazonas  ", "Bahia  ", "Ceará  ", "Distrito Federal  ", "Espírito Santo  ", "Goiás  ", "Maranhão  ", "Mato Grosso  ", "Mato Grosso do Sul  ", "Minas Gerais  ", "Pará  ", "Paraíba  ", "Paraná  ", "Pernambuco  ", "Piauí  ", "Rio de Janeiro  ", "Rio Grande do Norte  ", "Rio Grande do Sul  ", "Rondônia  ", "Roraima  ", "Santa Catarina  ", "São Paulo  ", "Sergipe  ", "Tocantins" });
+            comboBoxEstado.Location = new Point(382, 333);
+            comboBoxEstado.Name = "comboBoxEstado";
+            comboBoxEstado.Size = new Size(207, 23);
+            comboBoxEstado.TabIndex = 49;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(781, 600);
+            Controls.Add(comboBoxEstado);
             Controls.Add(label30);
             Controls.Add(label29);
             Controls.Add(label28);
@@ -532,7 +536,6 @@
             Controls.Add(labelAviso);
             Controls.Add(button1);
             Controls.Add(maskedTextBoxCEP);
-            Controls.Add(textBoxEstado);
             Controls.Add(textBoxMunicipio);
             Controls.Add(textBoxBairro);
             Controls.Add(textBoxComplemento);
@@ -620,5 +623,7 @@
         private Label label28;
         private Label label29;
         private Label label30;
+        private ComboBox comboBox1;
+        private ComboBox comboBoxEstado;
     }
 }
