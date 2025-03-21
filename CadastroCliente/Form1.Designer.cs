@@ -76,6 +76,8 @@
             label29 = new Label();
             label30 = new Label();
             comboBoxEstado = new ComboBox();
+            dataGridViewTabelaClientes = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTabelaClientes).BeginInit();
             SuspendLayout();
             // 
             // textBoxNome
@@ -514,11 +516,26 @@
             comboBoxEstado.Size = new Size(207, 23);
             comboBoxEstado.TabIndex = 49;
             // 
+            // dataGridViewTabelaClientes
+            // 
+            dataGridViewTabelaClientes.AllowUserToAddRows = false;
+            dataGridViewTabelaClientes.AllowUserToDeleteRows = false;
+            dataGridViewTabelaClientes.AllowUserToOrderColumns = true;
+            dataGridViewTabelaClientes.AllowUserToResizeRows = false;
+            dataGridViewTabelaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTabelaClientes.Location = new Point(692, 28);
+            dataGridViewTabelaClientes.MultiSelect = false;
+            dataGridViewTabelaClientes.Name = "dataGridViewTabelaClientes";
+            dataGridViewTabelaClientes.ReadOnly = true;
+            dataGridViewTabelaClientes.Size = new Size(631, 554);
+            dataGridViewTabelaClientes.TabIndex = 50;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(781, 600);
+            ClientSize = new Size(1341, 600);
+            Controls.Add(dataGridViewTabelaClientes);
             Controls.Add(comboBoxEstado);
             Controls.Add(label30);
             Controls.Add(label29);
@@ -569,6 +586,7 @@
             Controls.Add(textBoxNome);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTabelaClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -625,5 +643,6 @@
         private Label label30;
         private ComboBox comboBox1;
         private ComboBox comboBoxEstado;
+        private DataGridView dataGridViewTabelaClientes;
     }
 }

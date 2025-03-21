@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CadastroDeCliente
 {
-    internal class Cliente
+    internal class Clientes
     {
         public int Id { get; set; }
         public string Nome { get; set; }

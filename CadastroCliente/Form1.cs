@@ -4,27 +4,30 @@ namespace CadastroCliente
 {
     public partial class Form1 : Form
     {
-        List<Cliente> clientes = new List<Cliente>();
+        List<Clientes> clientes = new List<Clientes>();
+        private readonly BindingSource BindingSource = [];
+
 
         public Form1()
         {
             InitializeComponent();
 
+
             //Cliente Maria 
             EnderecoCliente EnderecoMaria = new EnderecoCliente() { Logradouro = "Rua 1", Numero = "123", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Cliente Maria = new Cliente() { Id = 1, Nome = "Maria Aparecida", DataNascimento = "26/09/2000", Telefone = "11 96688-5246", Email = "maria_aparecida@email.com", Endereco = EnderecoMaria, Genero = GeneroCliente.Feminino, NomeSocial = "", Etnia = EtniaCliente.Negra, Estrangeiro = false, Tipo = TipoCliente.PF };
+            Clientes Maria = new Clientes() { Id = 1, Nome = "Maria Aparecida", DataNascimento = "26/09/2000", Telefone = "11 96688-5246", Email = "maria_aparecida@email.com", Endereco = EnderecoMaria, Genero = GeneroCliente.Feminino, NomeSocial = "", Etnia = EtniaCliente.Negra, Estrangeiro = false, Tipo = TipoCliente.PF };
             clientes.Add(Maria);
 
             //Cliente José
             EnderecoCliente EnderecoJose = new EnderecoCliente() { Logradouro = "Rua 2", Numero = "456", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Cliente Jose = new Cliente() { Id = 2, Nome = "José da Silva", DataNascimento = "15/07/1990", Telefone = " 11 95687-5247", Email = "jose_da_silva@email.com", Endereco = EnderecoJose, Genero = GeneroCliente.Masculino, NomeSocial = "", Etnia = EtniaCliente.Indigena, Estrangeiro = false, Tipo = TipoCliente.PJ };
+            Clientes Jose = new Clientes() { Id = 2, Nome = "José da Silva", DataNascimento = "15/07/1990", Telefone = "11 95687-5247", Email = "jose_da_silva@email.com", Endereco = EnderecoJose, Genero = GeneroCliente.Masculino, NomeSocial = "", Etnia = EtniaCliente.Indigena, Estrangeiro = false, Tipo = TipoCliente.PJ };
             clientes.Add(Jose);
 
             //Cliente John Marye
             EnderecoCliente EnderecoJoaoMaria = new EnderecoCliente() { Logradouro = "Rua 3", Numero = "789", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Cliente JoaoMaria = new Cliente()
+            Clientes JoaoMaria = new Clientes()
             {
-                Id = 789123,
+                Id = 3,
                 Nome = "John Marye",
                 DataNascimento = "10/05/1980",
                 Telefone = "11 95687-6241",
@@ -37,6 +40,9 @@ namespace CadastroCliente
                 Tipo = TipoCliente.PF
             };
             clientes.Add(JoaoMaria);
+            
+            BindingSource.DataSource = clientes;
+            dataGridViewTabelaClientes.DataSource = BindingSource;
         }
 
 
@@ -167,6 +173,7 @@ namespace CadastroCliente
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
+
             labelAviso.Text = "";
             return true;
         }
@@ -387,13 +394,13 @@ namespace CadastroCliente
 
 
             int ID;
-            string nome = textBoxNome.Text;
-            string dataNascimento = maskedTextBoxDataNascimento.Text;
-            string telefone = maskedTextBoxTelefone.Text;
-            string email = textBoxEmail.Text;
-            string genero = comboBoxGenero.Text;
+            string Nome = textBoxNome.Text;
+            string DataNascimento = maskedTextBoxDataNascimento.Text;
+            string Telefone = maskedTextBoxTelefone.Text;
+            string Email = textBoxEmail.Text;
+            string Genero = comboBoxGenero.Text;
 
-            EtniaCliente etniaCliente = (EtniaCliente)comboBoxEtnia.SelectedItem;
+            EtniaCliente EtniaCliente = (EtniaCliente)comboBoxEtnia.SelectedItem;
 
             string nomeSocial = textBoxNomeSocial.Text;
             TipoCliente tipoCliente;
@@ -406,46 +413,43 @@ namespace CadastroCliente
                 tipoCliente = TipoCliente.PJ;
             }
 
-            bool estrangeiro = checkBoxEstrangeiro.Checked;
+            bool Estrangeiro = checkBoxEstrangeiro.Checked;
 
-            string cep = maskedTextBoxCEP.Text;
-            string municipio = textBoxMunicipio.Text;
+            string Cep = maskedTextBoxCEP.Text;
+            string Municipio = textBoxMunicipio.Text;
 
-            string estado = comboBoxEstado.SelectedItem?.ToString();
+            string Estado = comboBoxEstado.SelectedItem?.ToString();
 
-            string logradouro = textBoxLogradouro.Text;
-            string bairro = textBoxBairro.Text;
+            string Logradouro = textBoxLogradouro.Text;
+            string Bairro = textBoxBairro.Text;
 
             bool EmailEncontrado = false;
             bool TelefoneEncontrado = false;
  
-
             for (int i = 0; i < clientes.Count; i++)
             {
-                if (email == clientes[i].Email)
+                if (Email == clientes[i].Email)
                 {
                     EmailEncontrado = true;
+                    labelAviso.Text = "Email já cadastrado";
                     break;
                     
                 }
-                if (telefone == clientes[i].Telefone)
+                if (Telefone == clientes[i].Telefone)
                 {
                     TelefoneEncontrado = true;
+                    labelAviso.Text = "Telefone já cadastrado";
                     break;
                 }
             }
-            if (!EmailEncontrado)
+            if (!EmailEncontrado && !TelefoneEncontrado)
             {
-                labelAviso.Text = "Email cadastrado";
+                labelAviso.Text = "Cadastro realizado com sucesso";
+                labelAviso.ForeColor = Color.Green; 
             }
-            else if (!TelefoneEncontrado)
-            {
-                labelAviso.Text = "Telefone cadastrado";
-            }
-            else
-            {
-                labelAviso.Text = ""
-            }
+
+
+            BindingSource.ResetBindings(false);
         }
         private void maskedTextBoxTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
