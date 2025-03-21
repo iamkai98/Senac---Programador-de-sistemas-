@@ -15,12 +15,12 @@ namespace CadastroCliente
 
             //Cliente Maria 
             EnderecoCliente EnderecoMaria = new EnderecoCliente() { Logradouro = "Rua 1", Numero = "123", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Clientes Maria = new Clientes() { Id = 1, Nome = "Maria Aparecida", DataNascimento = "26/09/2000", Telefone = "11 96688-5246", Email = "maria_aparecida@email.com", Endereco = EnderecoMaria, Genero = GeneroCliente.Feminino, NomeSocial = "", Etnia = EtniaCliente.Negra, Estrangeiro = false, Tipo = TipoCliente.PF };
+            Clientes Maria = new Clientes() { Id = 1, Nome = "Maria Aparecida", DataNascimento = "26/09/2000", Telefone = "11966885246", Email = "maria_aparecida@email.com", Endereco = EnderecoMaria, Genero = GeneroCliente.Feminino, NomeSocial = "", Etnia = EtniaCliente.Negra, Estrangeiro = false, Tipo = TipoCliente.PF };
             clientes.Add(Maria);
 
             //Cliente José
             EnderecoCliente EnderecoJose = new EnderecoCliente() { Logradouro = "Rua 2", Numero = "456", Complemento = "Casa", Bairro = "Centro", Municipio = "São Paulo", Estado = "SP", CEP = "12345-678" };
-            Clientes Jose = new Clientes() { Id = 2, Nome = "José da Silva", DataNascimento = "15/07/1990", Telefone = "11 95687-5247", Email = "jose_da_silva@email.com", Endereco = EnderecoJose, Genero = GeneroCliente.Masculino, NomeSocial = "", Etnia = EtniaCliente.Indigena, Estrangeiro = false, Tipo = TipoCliente.PJ };
+            Clientes Jose = new Clientes() { Id = 2, Nome = "José da Silva", DataNascimento = "15/07/1990", Telefone = "11956875247", Email = "jose_da_silva@email.com", Endereco = EnderecoJose, Genero = GeneroCliente.Masculino, NomeSocial = "", Etnia = EtniaCliente.Indigena, Estrangeiro = false, Tipo = TipoCliente.PJ };
             clientes.Add(Jose);
 
             //Cliente John Marye
@@ -30,7 +30,7 @@ namespace CadastroCliente
                 Id = 3,
                 Nome = "John Marye",
                 DataNascimento = "10/05/1980",
-                Telefone = "11 95687-6241",
+                Telefone = "11956876241",
                 Email = "josemaria@email.com",
                 Endereco = EnderecoJoaoMaria,
                 Genero = GeneroCliente.Masculino,
@@ -139,6 +139,17 @@ namespace CadastroCliente
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
+
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                if (verificarNumerorepetido == clientes[i].Telefone)
+                {
+                    labelAviso.Text = "Este número já está em uso";
+                    labelAviso.ForeColor = Color.Red;
+                    return false;
+                }
+            }
+
             labelAviso.Text = "";
             return true;
             //método Distict.().Count() tem a função de contar quantos valores únicos existem euma coleção 
@@ -172,6 +183,17 @@ namespace CadastroCliente
                 labelAviso.Text = "O campo email deve conter '.'";
                 labelAviso.ForeColor = Color.Red;
                 return false;
+            }
+
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                if (textBoxEmail.Text == clientes[i].Email)
+                {
+
+                    labelAviso.Text = "Este email já está cadastrado";
+                    labelAviso.ForeColor = Color.Red;
+                    return false;
+                }
             }
 
             labelAviso.Text = "";
@@ -423,31 +445,11 @@ namespace CadastroCliente
             string Logradouro = textBoxLogradouro.Text;
             string Bairro = textBoxBairro.Text;
 
-            bool EmailEncontrado = false;
-            bool TelefoneEncontrado = false;
- 
-            for (int i = 0; i < clientes.Count; i++)
-            {
-                if (Email == clientes[i].Email)
-                {
-                    EmailEncontrado = true;
-                    labelAviso.Text = "Email já cadastrado";
-                    break;
-                    
-                }
-                if (Telefone == clientes[i].Telefone)
-                {
-                    TelefoneEncontrado = true;
-                    labelAviso.Text = "Telefone já cadastrado";
-                    break;
-                }
-            }
-            if (!EmailEncontrado && !TelefoneEncontrado)
-            {
-                labelAviso.Text = "Cadastro realizado com sucesso";
-                labelAviso.ForeColor = Color.Green; 
-            }
+            Clientes cliente = new Clientes();
+            cliente.Nome = 
 
+ 
+            
 
             BindingSource.ResetBindings(false);
         }
