@@ -342,7 +342,7 @@ namespace CadastroCliente
             }
             if(textBoxBairro.Text.Any(char.IsNumber))
             {
-                labelAviso.Text = "Digite um bairro válido (ex:Jardim Guarujá, Centro, Santo Amaro";
+                labelAviso.Text = "Digite um bairro válido (ex:Jardim Guarujá, Centro, Santo Amaro)";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
@@ -392,7 +392,7 @@ namespace CadastroCliente
             return true;
         }
 
-        public bool ValidarCadastro()
+        public bool ValidarCadastro() // agrupamento de todos os métodos criados  
         {
             if (!ValidarCampoNome() ||
                 !ValidarCampoDataNascimento() ||
@@ -423,8 +423,8 @@ namespace CadastroCliente
                 return;
             }
             
-            int NovoID = 1;
-            while (clientes.Any(c => c.Id == NovoID))
+            int NovoID = 1; 
+            while (clientes.Any(c => c.Id == NovoID)) //expressão lambda que verifica se algum cliente (c.Id) é igual ao valor de NovoID.
             {
                 NovoID++;  
             }
@@ -436,6 +436,7 @@ namespace CadastroCliente
             GeneroCliente NovoGenero = (GeneroCliente)comboBoxGenero.SelectedIndex;
             EtniaCliente NovoEtniaCliente = (EtniaCliente)comboBoxEtnia.SelectedIndex;
             string NovoNomeSocial = textBoxNomeSocial.Text;
+
             TipoCliente NovoTipoCliente;
             if (radioButtonTipoPF.Checked)
             {
@@ -448,15 +449,18 @@ namespace CadastroCliente
 
             bool NovoEstrangeiro = checkBoxEstrangeiro.Checked;
 
-            EnderecoCliente NovoEndereco = new EnderecoCliente();
+            EnderecoCliente NovoEndereco = new EnderecoCliente();// agrupamento dos campos de endereço 
             {
                 string NovoCep = maskedTextBoxCEP.Text;
                 string NovoMunicipio = textBoxMunicipio.Text;
-                string NovoLogradouro = textBoxLogradouro.Text;
+                string NovoEstado = comboBoxEstado.Text;
                 string NovoBairro = textBoxBairro.Text;
+                string NovoLogradouro = textBoxLogradouro.Text;
+                string NovoNumero = textBoxNumero.Text;
+                string NovoComplemento = textBoxComplemento.Text;
             }
 
-            clientes.Add(new Clientes ()
+            clientes.Add(new Clientes () // adicionando todos os 
             {   Id = NovoID,
                 Nome = NovoNome,
                 DataNascimento = NovoDataNascimento,
