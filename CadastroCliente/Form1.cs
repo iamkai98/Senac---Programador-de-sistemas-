@@ -46,6 +46,7 @@ namespace CadastroCliente
         }
 
 
+
         public bool ValidarCampoNome() // Método para avaliar se os campos estão nulos ou vazios
         {
             if (string.IsNullOrWhiteSpace(textBoxNome.Text))
@@ -258,18 +259,18 @@ namespace CadastroCliente
         {
             return true;
         }
-        public bool ValidarCep()
+        public bool ValidarCep() //Método para avaliar o campo CEP 
         {
             string CEP = maskedTextBoxCEP.Text.Replace("-", "").Trim(); // "Replace" é um método que remove o traço, deixando apenas os números do campo CEP
                                                                         // "Trim" é um método que remove espaços extras ao redor do texto 
 
-            if (!maskedTextBoxCEP.MaskFull)
+            if (!maskedTextBoxCEP.MaskFull)//analisa se todo o campo do masked está preenchido
             {
                 labelAviso.Text = "O campo CEP é obrigatório, preencha corretamente";
                 labelAviso.ForeColor = Color.Red;
                 return false;
             }
-            if (CEP.Distinct().Count() == 1)
+            if (CEP.Distinct().Count() == 1)// confere se todos os número dentro do textbox são iguais 
             {
                 labelAviso.Text = "O campo CEP não pode conter todos os dígitos repetidos";
                 labelAviso.ForeColor = Color.Red;
@@ -283,7 +284,7 @@ namespace CadastroCliente
             // Count = conta quantos números únicos restaram
             // ==1 se sóbrou 1 número único, significa que o usuário digitou o mesmo número repetido várias vezes
         }
-        public bool ValidarMunicipio()
+        public bool ValidarMunicipio() //Método para avaliar o campo municipio 
         {
             if (string.IsNullOrWhiteSpace(textBoxMunicipio.Text))
             {
@@ -300,7 +301,7 @@ namespace CadastroCliente
             }
             return true;
         }
-        public bool ValidarEstado()
+        public bool ValidarEstado() //Método para avaliar o campo estado
         {
             if (string.IsNullOrWhiteSpace(comboBoxEstado.Text))
             {
@@ -325,7 +326,7 @@ namespace CadastroCliente
             return true;
         }
 
-        public bool ValidarBairro()
+        public bool ValidarBairro() //Método para avaliar o campo bairro
         {
             if (string.IsNullOrWhiteSpace(textBoxBairro.Text))
             {
@@ -347,7 +348,7 @@ namespace CadastroCliente
             }
             return true;
         }
-        public bool ValidarLogradouro()
+        public bool ValidarLogradouro() // método para avaliar o campo logradouro
         {
             if (string.IsNullOrWhiteSpace(textBoxLogradouro.Text))
             {
@@ -369,7 +370,7 @@ namespace CadastroCliente
             }
             return true;
         }
-        public bool ValidarNumero()
+        public bool ValidarNumero() //método para avaliar o numero
         {
             if (string.IsNullOrWhiteSpace(textBoxNumero.Text))
             {
@@ -385,15 +386,14 @@ namespace CadastroCliente
             }
             return true;
         }
-        public bool ValidarComplemento()
+        public bool ValidarComplemento() // método para avaliar o complemento
         {
 
             return true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public bool ValidarCadastro()
         {
-
             if (!ValidarCampoNome() ||
                 !ValidarCampoDataNascimento() ||
                 !ValidarCampoTelefone() ||
@@ -411,42 +411,66 @@ namespace CadastroCliente
                 !ValidarNumero() ||
                 !ValidarComplemento())
             {
+                return false;
+            } 
+            return true;
+        }
+            
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCadastro())
+            {
                 return;
             }
+            
+            int NovoID = 1;
+            while (clientes.Any(c => c.Id == NovoID))
+            {
+                NovoID++;  
+            }
 
-
-            int ID;
-            string Nome = textBoxNome.Text;
-            string DataNascimento = maskedTextBoxDataNascimento.Text;
-            string Telefone = maskedTextBoxTelefone.Text;
-            string Email = textBoxEmail.Text;
-            string Genero = comboBoxGenero.Text;
-
-            EtniaCliente EtniaCliente = (EtniaCliente)comboBoxEtnia.SelectedItem;
-
-            string nomeSocial = textBoxNomeSocial.Text;
-            TipoCliente tipoCliente;
+            string NovoNome = textBoxNome.Text;
+            string NovoDataNascimento = maskedTextBoxDataNascimento.Text;
+            string NovoTelefone = maskedTextBoxTelefone.Text;
+            string NovoEmail = textBoxEmail.Text;
+            GeneroCliente NovoGenero = (GeneroCliente)comboBoxGenero.SelectedIndex;
+            EtniaCliente NovoEtniaCliente = (EtniaCliente)comboBoxEtnia.SelectedIndex;
+            string NovoNomeSocial = textBoxNomeSocial.Text;
+            TipoCliente NovoTipoCliente;
             if (radioButtonTipoPF.Checked)
             {
-                tipoCliente = TipoCliente.PF;
+                NovoTipoCliente = TipoCliente.PF;
             }
             else
             {
-                tipoCliente = TipoCliente.PJ;
+                NovoTipoCliente = TipoCliente.PJ;
             }
 
-            bool Estrangeiro = checkBoxEstrangeiro.Checked;
+            bool NovoEstrangeiro = checkBoxEstrangeiro.Checked;
 
-            string Cep = maskedTextBoxCEP.Text;
-            string Municipio = textBoxMunicipio.Text;
+            EnderecoCliente NovoEndereco = new EnderecoCliente();
+            {
+                string NovoCep = maskedTextBoxCEP.Text;
+                string NovoMunicipio = textBoxMunicipio.Text;
+                string NovoLogradouro = textBoxLogradouro.Text;
+                string NovoBairro = textBoxBairro.Text;
+            }
 
-            string Estado = comboBoxEstado.SelectedItem?.ToString();
+            clientes.Add(new Clientes ()
+            {   Id = NovoID,
+                Nome = NovoNome,
+                DataNascimento = NovoDataNascimento,
+                Telefone = NovoTelefone,
+                Email = NovoEmail,
+                Genero = NovoGenero,
+                Etnia = NovoEtniaCliente,
+                NomeSocial = NovoNomeSocial,
+                Tipo = NovoTipoCliente,
+                Estrangeiro = NovoEstrangeiro,
+                Endereco = NovoEndereco 
+            });
 
-            string Logradouro = textBoxLogradouro.Text;
-            string Bairro = textBoxBairro.Text;
-
-            Clientes cliente = new Clientes();
-            cliente.Nome = 
+            
 
  
             
