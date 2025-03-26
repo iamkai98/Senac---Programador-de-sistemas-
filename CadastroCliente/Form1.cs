@@ -424,9 +424,9 @@ namespace CadastroCliente
             }
             
             int NovoID = 1; 
-            while (clientes.Any(c => c.Id == NovoID)) //expressão lambda que verifica se algum cliente (c.Id) é igual ao valor de NovoID.
+            while (clientes.Any(c => c.Id == NovoID)) // lambda que verifica se algum cliente (c.Id) é igual ao valor de NovoID.
             {
-                NovoID++;  
+                NovoID++; 
             }
 
             string NovoNome = textBoxNome.Text;
