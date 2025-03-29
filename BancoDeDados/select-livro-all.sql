@@ -1,5 +1,12 @@
 SELECT 
-    *
+    livro.id,
+    livro.data_publicacao,
+    livro.numero_paginas,
+    livro.preco,
+    livro.isbn,
+    genero.nome AS genero,
+    editora.nome AS editora,
+    autor.nome AS nome
 FROM
     livro,
     autor,

@@ -7,5 +7,9 @@ CREATE TABLE IF NOT EXISTS livro (
     isbn VARCHAR(17) NOT NULL UNIQUE,
     id_genero INT NOT NULL,
     id_editora INT NOT NULL,
-    id_autor INT NOT NULL
+    id_autor INT NOT NULL,
+    FOREIGN KEY (id_genero) REFERENCES genero(id),
+    FOREIGN KEY  (id_editora) REFERENCES editora (id),
+    FOREIGN KEY (id_autor) REFERENCES autor (id)
 );
+
