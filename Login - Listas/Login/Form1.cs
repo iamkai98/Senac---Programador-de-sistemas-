@@ -1,15 +1,13 @@
+using MySql.Data.MySqlClient;
 using System.Configuration;
 
 namespace Login
 {
     public partial class FormLogin : Form
     {
-        Usuario neymar = new Usuario() { Email = "neymar.jr@email.com", Senha = "Brun@123" };
-        Usuario pablo = new Usuario() { Email = "pablo.vitar@email.com", Senha = "12345Abc!" };
-        Usuario sukuna = new Usuario() { Email = "sukuna.silva@email.com", Senha = "Sete7Sete!" };
-
-
-        List<Usuario> usuarios = new List<Usuario>();
+        private static readonly string ConnectionString = "datasource=localhost;username=root;password=;database=senac;";
+        private readonly MySqlConnection Connection = new MySqlConnection(ConnectionString);
+        
         public FormLogin()
         {
             InitializeComponent();
@@ -49,27 +47,42 @@ namespace Login
                 return;
             }
 
-            int posicaoUsuarioEncontrado = listaUsuarios.IndexOf(usuarioBuscado);
+            bool autenticado = false;
 
-            for (int i = 0; i < listaUsuarios.Count; i++) // primeira condição inicio, segunda condição fim, terceira condição incremento
+            try
             {
-                if (usuarioBuscado == listaUsuarios[i])//se o usuario buscado for igual ao usuario na posição i
-                {
-                    posicaoUsuarioEncontrado = i; //só funciona se a condição acima for verdadeira
-                }
+                Connection.Open(); //abre a conexão com o banco de dados
+
+                string query = $"SELECT senha FROM usuario WHERE email = '{usuarioBuscado}';"; //criação da query com do MYSQL com o usuario buscado
+
+                MySqlCommand mySQLCommand = new MySqlCommand(query, Connection);//cria um comando MySQL com a query definida lá no MYSQL e a conexão
+                MySqlDataReader reader = mySQLCommand.ExecuteReader(); //executa o comando e armazena o resultado na variavel reader
+
+                autenticado = reader.Read() && reader.GetString(0) == senha; //verifica se o reader leu algum dado e se a senha do banco de dados é igual a senha digitada pelo usuario
+            }
+            catch
+            {
+                MessageBox.Show("Erro de banco de dados");
+            }
+            finally
+            {
+                Connection.Close();
+            
             }
 
-            if (posicaoUsuarioEncontrado > -1 && senha == listaSenhas[posicaoUsuarioEncontrado])
-            //se a posição do usuario for maior que -1 e a senha for igual a senha na posição do usuario
+            if (!autenticado)
             {
-                Aviso.Text = "Usuario logado com sucesso";
-                Aviso.ForeColor = Color.Green;
-            }
-            else
-            {
-                Aviso.Text = "Usuario ou senha incorretos";
+                Aviso.Text = "Usuario ou senha incorretos"; //se o usuario ou a senha estiverem incorretos irá aparecer a mensagem "usuario ou senha incorretos" e a cor do texto será vermelha
                 Aviso.ForeColor = Color.Red;
+                return;
             }
+
+            label1.Text = "Autenticado com sucesso!";
+            label1.ForeColor = Color.Green;
+
+            textBox1Login.Clear(); //limpa o textBox1Login
+            textBox2Senha.Clear(); //limpa o textBox2Senha
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -151,19 +164,58 @@ namespace Login
                 return;
             }
 
-            if (listaUsuarios.Contains(NovoUsuario))//se a lista de usuarios contiver o novo usuario irá aparecer a mensagem "usuário já cadastrado" e a cor do texto será vermelha
+            bool encontrado = false; 
+          
+           try
             {
-                AvisoCadastro.Text = "Usuário já cadastrado";
-                AvisoCadastro.ForeColor = Color.Red;
-                return;
+                Connection.Open();
+
+                string query = $"SELECT email FROM usuario WHERE email = '{NovoUsuario}';"; //criação da query com do MYSQL com o usuario buscado
+
+                MySqlCommand mySqlCommand = new MySqlCommand(query, Connection);//cria um comando MySQL com a query definida lá no MYSQL e a conexão
+                MySqlDataReader reader = mySqlCommand.ExecuteReader(); //executa o comando e armazena o resultado na variavel reader
+
+                encontrado = reader.Read(); //verifica se o reader leu algum dado
             }
 
-            listaUsuarios.Add(NovoUsuario);//adiciona o novo usuario na lista de usuarios
-            listaSenhas.Add(NovaSenha);//adiciona a nova senha na lista de senhas
-            AvisoCadastro.Text = "Usuário Cadastrado";
-            AvisoCadastro.ForeColor = Color.Green;
-            textBox1LoginCadastro.Clear();//limpa o textBox1LoginCadastro
-            textBox2SenhaCadastro.Clear();//limpa o textBox2SenhaCadastro
+            catch
+            {
+                MessageBox.Show("Erro de banco de dados");
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+           if (encontrado)
+            {
+               AvisoCadastro.Text = "Usuario ja existe"; //se o usuario já existir irá aparecer a mensagem "usuario ja existe" e a cor do texto será vermelha
+            }
+
+           try
+            {
+                Connection.Open();
+
+                string query = $"INSERT INTO usuario (email, senha) VALUES ('{NovoUsuario} ', '{NovaSenha} ');"; //criação da query com do MYSQL com o usuario buscado
+
+                MySqlCommand mySqlCommand = new MySqlCommand(query, Connection);//cria um comando MySQL com a query definida lá no MYSQL e a conexão
+                mySqlCommand.ExecuteNonQuery(); //executa o comando e armazena o resultado na variavel reader
+
+                AvisoCadastro.Text = "Usuario cadastrado com sucesso"; //se o usuario for cadastrado com sucesso irá aparecer a mensagem "usuario cadastrado com sucesso" e a cor do texto será verde
+                textBox1LoginCadastro.Clear(); //limpa o textBox1LoginCadastro
+                textBox2SenhaCadastro.Clear(); //limpa o textBox2SenhaCadastro
+            }
+            catch
+            {
+                MessageBox.Show("Erro de banco de dados");
+            }
+            finally
+            {
+                Connection.Close();
+            }
+
+
+          
 
         }
 

@@ -1,0 +1,7 @@
+CREATE TABLE empregado(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(30) NOT NULL,
+idade VARCHAR (3) NOT NULL,
+departamento VARCHAR (10) NOT NULL,
+salario INT NOT NULL
+);
