@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroCliente
+namespace CadastroCliente.dominio
 {
-    internal class EnderecoCliente
+    class EnderecoCliente
     {
+        public int ID { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }

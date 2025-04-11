@@ -1,3 +1,4 @@
+using CadastroCliente.dominio;
 using CadastroDeCliente;
 
 namespace CadastroCliente
