@@ -33,6 +33,7 @@
             dataGridViewAtividades = new DataGridView();
             buttonAtualizar = new Button();
             buttonCriar = new Button();
+            labelErro = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAtividades).BeginInit();
             SuspendLayout();
             // 
@@ -52,38 +53,57 @@
             Finalizar.TabIndex = 1;
             Finalizar.Text = "Finalizar";
             Finalizar.UseVisualStyleBackColor = true;
+            Finalizar.Click += Finalizar_Click;
             // 
             // dataGridViewAtividades
             // 
+            dataGridViewAtividades.AllowUserToAddRows = false;
+            dataGridViewAtividades.AllowUserToDeleteRows = false;
+            dataGridViewAtividades.AllowUserToResizeColumns = false;
+            dataGridViewAtividades.AllowUserToResizeRows = false;
             dataGridViewAtividades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewAtividades.Location = new Point(36, 80);
+            dataGridViewAtividades.Location = new Point(12, 51);
+            dataGridViewAtividades.MultiSelect = false;
             dataGridViewAtividades.Name = "dataGridViewAtividades";
-            dataGridViewAtividades.Size = new Size(624, 331);
+            dataGridViewAtividades.ReadOnly = true;
+            dataGridViewAtividades.Size = new Size(641, 331);
             dataGridViewAtividades.TabIndex = 2;
             // 
             // buttonAtualizar
             // 
-            buttonAtualizar.Location = new Point(666, 80);
+            buttonAtualizar.Location = new Point(659, 51);
             buttonAtualizar.Name = "buttonAtualizar";
-            buttonAtualizar.Size = new Size(122, 23);
+            buttonAtualizar.Size = new Size(129, 23);
             buttonAtualizar.TabIndex = 3;
             buttonAtualizar.Text = "Atualizar";
             buttonAtualizar.UseVisualStyleBackColor = true;
+            buttonAtualizar.Click += buttonAtualizar_Click;
             // 
             // buttonCriar
             // 
-            buttonCriar.Location = new Point(666, 388);
+            buttonCriar.Location = new Point(659, 359);
             buttonCriar.Name = "buttonCriar";
-            buttonCriar.Size = new Size(122, 23);
+            buttonCriar.Size = new Size(129, 23);
             buttonCriar.TabIndex = 4;
             buttonCriar.Text = "Criar";
             buttonCriar.UseVisualStyleBackColor = true;
+            buttonCriar.Click += buttonCriar_Click;
+            // 
+            // labelErro
+            // 
+            labelErro.AutoSize = true;
+            labelErro.Location = new Point(36, 414);
+            labelErro.Name = "labelErro";
+            labelErro.Size = new Size(38, 15);
+            labelErro.TabIndex = 5;
+            labelErro.Text = "label1";
             // 
             // ListaDeAtividades
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelErro);
             Controls.Add(buttonCriar);
             Controls.Add(buttonAtualizar);
             Controls.Add(dataGridViewAtividades);
@@ -104,5 +124,6 @@
         private DataGridView dataGridViewAtividades;
         private Button buttonAtualizar;
         private Button buttonCriar;
+        private Label labelErro;
     }
 }

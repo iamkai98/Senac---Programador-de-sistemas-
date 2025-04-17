@@ -53,7 +53,7 @@ namespace ListaAtividades.Repositorio
             using (var con = Database.GetConnection())
             {
                 con.Open();
-                string query = $"SELECT * FROM atividade WHERE situacao = {Situacao.Realizando};"; // Select * from atividade where situacao = 1
+                string query = $"SELECT * FROM atividade WHERE situacao = {(int)Situacao.Realizando};"; // Select * from atividade where situacao = 1
 
                 using (var cmd = new MySqlCommand (query, con))
 
@@ -85,7 +85,7 @@ namespace ListaAtividades.Repositorio
             {
 
                 con.Open(); // abrir a conexão com o banco de dados
-                string query = $"SELECT * FROM atividade WHERE situacao = {Situacao.Pendente};"; // Select * from atividade where situacao = 0
+                string query = $"SELECT * FROM atividade WHERE situacao = {(int)Situacao.Pendente};"; // Select * from atividade where situacao = 0
 
                 using (var cmd = new MySqlCommand(query, con)) // criar um novo comando SQL
                 {
@@ -95,7 +95,7 @@ namespace ListaAtividades.Repositorio
                             atividades.Add(new Atividade()
                             {
                                 Id = reader.GetInt32("id"),// converter o id para string
-                                Titulo = reader.GetString("título"),// pegar o titulo
+                                Titulo = reader.GetString("titulo"),// pegar o titulo
                                 Situacao = (Situacao)reader.GetInt32("Situacao") // pegar a situacao
                             });
                     }
