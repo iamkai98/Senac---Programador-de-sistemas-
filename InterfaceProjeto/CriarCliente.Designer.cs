@@ -52,23 +52,23 @@
             textBox10 = new TextBox();
             buttonCadastrar = new Button();
             groupBoxDadosCliente = new GroupBox();
-            maskedTextBoxDataDeNascimento = new MaskedTextBox();
-            labelDataDeNascimento = new Label();
-            comboBoxGenero = new ComboBox();
-            label3 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
-            labelAsterisco = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
             label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            labelAsterisco = new Label();
+            maskedTextBox1 = new MaskedTextBox();
+            label3 = new Label();
+            comboBoxGenero = new ComboBox();
+            labelDataDeNascimento = new Label();
+            maskedTextBoxDataDeNascimento = new MaskedTextBox();
             groupBoxEndereço = new GroupBox();
-            label1 = new Label();
-            label4 = new Label();
-            label10 = new Label();
-            label11 = new Label();
             label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label4 = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBoxDadosCliente.SuspendLayout();
             groupBoxEndereço.SuspendLayout();
@@ -76,8 +76,9 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.dd2oj85_b5bab19d_e110_4f51_ae2b_ca39dd6d8d74;
-            pictureBox1.Location = new Point(745, -4);
+            pictureBox1.Location = new Point(843, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(55, 47);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -86,6 +87,7 @@
             // 
             // buttonVoltarMenu
             // 
+            buttonVoltarMenu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonVoltarMenu.Cursor = Cursors.Hand;
             buttonVoltarMenu.FlatStyle = FlatStyle.Flat;
             buttonVoltarMenu.Location = new Point(823, 552);
@@ -260,10 +262,11 @@
             // 
             // buttonCadastrar
             // 
+            buttonCadastrar.Anchor = AnchorStyles.None;
             buttonCadastrar.BackgroundImageLayout = ImageLayout.None;
             buttonCadastrar.Cursor = Cursors.Hand;
             buttonCadastrar.FlatStyle = FlatStyle.Flat;
-            buttonCadastrar.Location = new Point(428, 539);
+            buttonCadastrar.Location = new Point(348, 415);
             buttonCadastrar.Name = "buttonCadastrar";
             buttonCadastrar.Size = new Size(75, 23);
             buttonCadastrar.TabIndex = 28;
@@ -272,6 +275,7 @@
             // 
             // groupBoxDadosCliente
             // 
+            groupBoxDadosCliente.Anchor = AnchorStyles.None;
             groupBoxDadosCliente.Controls.Add(label9);
             groupBoxDadosCliente.Controls.Add(label8);
             groupBoxDadosCliente.Controls.Add(label7);
@@ -297,59 +301,45 @@
             groupBoxDadosCliente.TabStop = false;
             groupBoxDadosCliente.Text = "Dados básicos";
             // 
-            // maskedTextBoxDataDeNascimento
+            // label9
             // 
-            maskedTextBoxDataDeNascimento.Location = new Point(14, 92);
-            maskedTextBoxDataDeNascimento.Mask = "00/00/0000";
-            maskedTextBoxDataDeNascimento.Name = "maskedTextBoxDataDeNascimento";
-            maskedTextBoxDataDeNascimento.Size = new Size(100, 23);
-            maskedTextBoxDataDeNascimento.TabIndex = 23;
-            maskedTextBoxDataDeNascimento.ValidatingType = typeof(DateTime);
+            label9.AutoSize = true;
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(508, 76);
+            label9.Name = "label9";
+            label9.Size = new Size(12, 15);
+            label9.TabIndex = 36;
+            label9.Text = "*";
             // 
-            // labelDataDeNascimento
+            // label8
             // 
-            labelDataDeNascimento.AutoSize = true;
-            labelDataDeNascimento.Location = new Point(14, 71);
-            labelDataDeNascimento.Name = "labelDataDeNascimento";
-            labelDataDeNascimento.Size = new Size(117, 15);
-            labelDataDeNascimento.TabIndex = 24;
-            labelDataDeNascimento.Text = "Data de Nascimento:";
+            label8.AutoSize = true;
+            label8.ForeColor = Color.Red;
+            label8.Location = new Point(508, 19);
+            label8.Name = "label8";
+            label8.Size = new Size(12, 15);
+            label8.TabIndex = 35;
+            label8.Text = "*";
             // 
-            // comboBoxGenero
+            // label7
             // 
-            comboBoxGenero.FormattingEnabled = true;
-            comboBoxGenero.Items.AddRange(new object[] { "Feminino", "Masculino", "Não-Binário" });
-            comboBoxGenero.Location = new Point(152, 92);
-            comboBoxGenero.Name = "comboBoxGenero";
-            comboBoxGenero.Size = new Size(121, 23);
-            comboBoxGenero.TabIndex = 25;
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(142, 76);
+            label7.Name = "label7";
+            label7.Size = new Size(12, 15);
+            label7.TabIndex = 34;
+            label7.Text = "*";
             // 
-            // label3
+            // label6
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(152, 76);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 15);
-            label3.TabIndex = 26;
-            label3.Text = "Genêro:";
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.Location = new Point(516, 92);
-            maskedTextBox1.Mask = "(99) 00000-0000";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(115, 23);
-            maskedTextBox1.TabIndex = 27;
-            // 
-            // labelAsterisco
-            // 
-            labelAsterisco.AutoSize = true;
-            labelAsterisco.ForeColor = Color.Red;
-            labelAsterisco.Location = new Point(6, 19);
-            labelAsterisco.Name = "labelAsterisco";
-            labelAsterisco.Size = new Size(12, 15);
-            labelAsterisco.TabIndex = 30;
-            labelAsterisco.Text = "*";
+            label6.AutoSize = true;
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(327, 74);
+            label6.Name = "label6";
+            label6.Size = new Size(12, 15);
+            label6.TabIndex = 33;
+            label6.Text = "*";
             // 
             // label5
             // 
@@ -362,48 +352,63 @@
             label5.TabIndex = 32;
             label5.Text = "*";
             // 
-            // label6
+            // labelAsterisco
             // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.Red;
-            label6.Location = new Point(327, 74);
-            label6.Name = "label6";
-            label6.Size = new Size(12, 15);
-            label6.TabIndex = 33;
-            label6.Text = "*";
+            labelAsterisco.AutoSize = true;
+            labelAsterisco.ForeColor = Color.Red;
+            labelAsterisco.Location = new Point(6, 19);
+            labelAsterisco.Name = "labelAsterisco";
+            labelAsterisco.Size = new Size(12, 15);
+            labelAsterisco.TabIndex = 30;
+            labelAsterisco.Text = "*";
             // 
-            // label7
+            // maskedTextBox1
             // 
-            label7.AutoSize = true;
-            label7.ForeColor = Color.Red;
-            label7.Location = new Point(142, 76);
-            label7.Name = "label7";
-            label7.Size = new Size(12, 15);
-            label7.TabIndex = 34;
-            label7.Text = "*";
+            maskedTextBox1.Location = new Point(516, 92);
+            maskedTextBox1.Mask = "(99) 00000-0000";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(115, 23);
+            maskedTextBox1.TabIndex = 27;
             // 
-            // label8
+            // label3
             // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.Red;
-            label8.Location = new Point(508, 19);
-            label8.Name = "label8";
-            label8.Size = new Size(12, 15);
-            label8.TabIndex = 35;
-            label8.Text = "*";
+            label3.AutoSize = true;
+            label3.Location = new Point(152, 76);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 15);
+            label3.TabIndex = 26;
+            label3.Text = "Genêro:";
             // 
-            // label9
+            // comboBoxGenero
             // 
-            label9.AutoSize = true;
-            label9.ForeColor = Color.Red;
-            label9.Location = new Point(508, 76);
-            label9.Name = "label9";
-            label9.Size = new Size(12, 15);
-            label9.TabIndex = 36;
-            label9.Text = "*";
+            comboBoxGenero.FormattingEnabled = true;
+            comboBoxGenero.Items.AddRange(new object[] { "Feminino", "Masculino", "Não-Binário" });
+            comboBoxGenero.Location = new Point(152, 92);
+            comboBoxGenero.Name = "comboBoxGenero";
+            comboBoxGenero.Size = new Size(121, 23);
+            comboBoxGenero.TabIndex = 25;
+            // 
+            // labelDataDeNascimento
+            // 
+            labelDataDeNascimento.AutoSize = true;
+            labelDataDeNascimento.Location = new Point(14, 71);
+            labelDataDeNascimento.Name = "labelDataDeNascimento";
+            labelDataDeNascimento.Size = new Size(117, 15);
+            labelDataDeNascimento.TabIndex = 24;
+            labelDataDeNascimento.Text = "Data de Nascimento:";
+            // 
+            // maskedTextBoxDataDeNascimento
+            // 
+            maskedTextBoxDataDeNascimento.Location = new Point(14, 92);
+            maskedTextBoxDataDeNascimento.Mask = "00/00/0000";
+            maskedTextBoxDataDeNascimento.Name = "maskedTextBoxDataDeNascimento";
+            maskedTextBoxDataDeNascimento.Size = new Size(100, 23);
+            maskedTextBoxDataDeNascimento.TabIndex = 23;
+            maskedTextBoxDataDeNascimento.ValidatingType = typeof(DateTime);
             // 
             // groupBoxEndereço
             // 
+            groupBoxEndereço.Anchor = AnchorStyles.None;
             groupBoxEndereço.Controls.Add(label12);
             groupBoxEndereço.Controls.Add(label11);
             groupBoxEndereço.Controls.Add(label10);
@@ -428,35 +433,15 @@
             groupBoxEndereço.TabStop = false;
             groupBoxEndereço.Text = "Endereço";
             // 
-            // label1
+            // label12
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Red;
-            label1.Location = new Point(6, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(12, 15);
-            label1.TabIndex = 37;
-            label1.Text = "*";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.Red;
-            label4.Location = new Point(6, 79);
-            label4.Name = "label4";
-            label4.Size = new Size(12, 15);
-            label4.TabIndex = 38;
-            label4.Text = "*";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.Red;
-            label10.Location = new Point(240, 79);
-            label10.Name = "label10";
-            label10.Size = new Size(12, 15);
-            label10.TabIndex = 39;
-            label10.Text = "*";
+            label12.AutoSize = true;
+            label12.ForeColor = Color.Red;
+            label12.Location = new Point(508, 29);
+            label12.Name = "label12";
+            label12.Size = new Size(12, 15);
+            label12.TabIndex = 41;
+            label12.Text = "*";
             // 
             // label11
             // 
@@ -468,15 +453,35 @@
             label11.TabIndex = 40;
             label11.Text = "*";
             // 
-            // label12
+            // label10
             // 
-            label12.AutoSize = true;
-            label12.ForeColor = Color.Red;
-            label12.Location = new Point(508, 29);
-            label12.Name = "label12";
-            label12.Size = new Size(12, 15);
-            label12.TabIndex = 41;
-            label12.Text = "*";
+            label10.AutoSize = true;
+            label10.ForeColor = Color.Red;
+            label10.Location = new Point(240, 79);
+            label10.Name = "label10";
+            label10.Size = new Size(12, 15);
+            label10.TabIndex = 39;
+            label10.Text = "*";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.Red;
+            label4.Location = new Point(6, 79);
+            label4.Name = "label4";
+            label4.Size = new Size(12, 15);
+            label4.TabIndex = 38;
+            label4.Text = "*";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Red;
+            label1.Location = new Point(6, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(12, 15);
+            label1.TabIndex = 37;
+            label1.Text = "*";
             // 
             // CriarCliente
             // 

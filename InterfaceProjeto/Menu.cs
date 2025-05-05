@@ -27,5 +27,17 @@ namespace InterfaceProjeto
             editarPedido.Show();
             this.Hide();
         }
+
+        private void buttonCriarCliente_MouseEnter(object sender, EventArgs e)
+        {
+            buttonCriarCliente.BackColor = ColorTranslator.FromHtml("#2314BC");
+            buttonCriarCliente.ForeColor = Color.White;
+        }
+
+        private void buttonCriarCliente_MouseLeave(object sender, EventArgs e)
+        {
+            buttonCriarCliente.BackColor = SystemColors.Control;
+            buttonCriarCliente.ForeColor = Color.Black;
+        }
     }
 }

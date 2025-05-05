@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
             buttonVoltarMenu = new Button();
             textBoxBuscarPedido = new TextBox();
             dataGridView1 = new DataGridView();
@@ -36,22 +35,14 @@
             buttonDetalhes = new Button();
             buttonFinalizar = new Button();
             buttonExtender = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.dd2oj85_b5bab19d_e110_4f51_ae2b_ca39dd6d8d74;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(105, 83);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
             // 
             // buttonVoltarMenu
             // 
+            buttonVoltarMenu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonVoltarMenu.Cursor = Cursors.Hand;
             buttonVoltarMenu.FlatStyle = FlatStyle.Flat;
             buttonVoltarMenu.Location = new Point(879, 547);
@@ -64,13 +55,16 @@
             // 
             // textBoxBuscarPedido
             // 
-            textBoxBuscarPedido.Location = new Point(283, 41);
+            textBoxBuscarPedido.Anchor = AnchorStyles.Top;
+            textBoxBuscarPedido.BackColor = Color.White;
+            textBoxBuscarPedido.Location = new Point(163, 42);
             textBoxBuscarPedido.Name = "textBoxBuscarPedido";
-            textBoxBuscarPedido.Size = new Size(240, 23);
+            textBoxBuscarPedido.Size = new Size(388, 23);
             textBoxBuscarPedido.TabIndex = 8;
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(128, 92);
             dataGridView1.Name = "dataGridView1";
@@ -79,8 +73,9 @@
             // 
             // buttonBuscarPedido
             // 
+            buttonBuscarPedido.Anchor = AnchorStyles.Top;
             buttonBuscarPedido.Cursor = Cursors.Hand;
-            buttonBuscarPedido.Location = new Point(540, 41);
+            buttonBuscarPedido.Location = new Point(557, 42);
             buttonBuscarPedido.Name = "buttonBuscarPedido";
             buttonBuscarPedido.Size = new Size(75, 23);
             buttonBuscarPedido.TabIndex = 10;
@@ -89,6 +84,7 @@
             // 
             // buttonDetalhes
             // 
+            buttonDetalhes.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonDetalhes.Cursor = Cursors.Hand;
             buttonDetalhes.Location = new Point(723, 92);
             buttonDetalhes.Name = "buttonDetalhes";
@@ -99,6 +95,7 @@
             // 
             // buttonFinalizar
             // 
+            buttonFinalizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonFinalizar.Cursor = Cursors.Hand;
             buttonFinalizar.Location = new Point(804, 469);
             buttonFinalizar.Name = "buttonFinalizar";
@@ -109,6 +106,7 @@
             // 
             // buttonExtender
             // 
+            buttonExtender.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonExtender.Cursor = Cursors.Hand;
             buttonExtender.Location = new Point(723, 469);
             buttonExtender.Name = "buttonExtender";
@@ -117,11 +115,23 @@
             buttonExtender.Text = "Extender";
             buttonExtender.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.Image = Properties.Resources.dd2oj85_b5bab19d_e110_4f51_ae2b_ca39dd6d8d74;
+            pictureBox2.Location = new Point(899, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(55, 47);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
+            // 
             // EditarPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(966, 582);
+            Controls.Add(pictureBox2);
             Controls.Add(buttonExtender);
             Controls.Add(buttonFinalizar);
             Controls.Add(buttonDetalhes);
@@ -129,11 +139,10 @@
             Controls.Add(dataGridView1);
             Controls.Add(textBoxBuscarPedido);
             Controls.Add(buttonVoltarMenu);
-            Controls.Add(pictureBox1);
             Name = "EditarPedido";
             Text = "EditarPedido";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,5 +157,6 @@
         private Button buttonDetalhes;
         private Button buttonFinalizar;
         private Button buttonExtender;
+        private PictureBox pictureBox2;
     }
 }

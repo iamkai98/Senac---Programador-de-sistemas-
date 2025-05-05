@@ -39,21 +39,28 @@
             // 
             // buttonCriarPedido
             // 
+            buttonCriarPedido.Anchor = AnchorStyles.None;
+            buttonCriarPedido.BackColor = Color.FromArgb(224, 224, 224);
             buttonCriarPedido.Cursor = Cursors.Hand;
             buttonCriarPedido.FlatAppearance.BorderSize = 0;
             buttonCriarPedido.FlatStyle = FlatStyle.Flat;
-            buttonCriarPedido.Location = new Point(97, 176);
+            buttonCriarPedido.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            buttonCriarPedido.ForeColor = SystemColors.ActiveCaptionText;
+            buttonCriarPedido.Image = (Image)resources.GetObject("buttonCriarPedido.Image");
+            buttonCriarPedido.Location = new Point(486, 225);
             buttonCriarPedido.Name = "buttonCriarPedido";
-            buttonCriarPedido.Size = new Size(206, 113);
+            buttonCriarPedido.Size = new Size(300, 300);
             buttonCriarPedido.TabIndex = 0;
-            buttonCriarPedido.Text = "Criar pedido";
-            buttonCriarPedido.UseVisualStyleBackColor = true;
+            buttonCriarPedido.Text = "\r\n\r\nCriar pedido";
+            buttonCriarPedido.TextAlign = ContentAlignment.TopCenter;
+            buttonCriarPedido.UseVisualStyleBackColor = false;
             buttonCriarPedido.Click += buttonCriarPedido_Click;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom;
             label1.AutoSize = true;
-            label1.Location = new Point(365, 426);
+            label1.Location = new Point(596, 603);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
             label1.TabIndex = 1;
@@ -61,36 +68,51 @@
             // 
             // buttonCriarCliente
             // 
+            buttonCriarCliente.Anchor = AnchorStyles.None;
+            buttonCriarCliente.BackColor = Color.FromArgb(224, 224, 224);
             buttonCriarCliente.Cursor = Cursors.Hand;
             buttonCriarCliente.FlatAppearance.BorderSize = 0;
             buttonCriarCliente.FlatStyle = FlatStyle.Flat;
-            buttonCriarCliente.Location = new Point(309, 176);
+            buttonCriarCliente.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonCriarCliente.ForeColor = Color.Black;
+            buttonCriarCliente.Image = (Image)resources.GetObject("buttonCriarCliente.Image");
+            buttonCriarCliente.Location = new Point(180, 225);
             buttonCriarCliente.Name = "buttonCriarCliente";
-            buttonCriarCliente.Size = new Size(206, 113);
+            buttonCriarCliente.Size = new Size(300, 300);
             buttonCriarCliente.TabIndex = 2;
-            buttonCriarCliente.Text = "Criar cliente";
-            buttonCriarCliente.UseVisualStyleBackColor = true;
+            buttonCriarCliente.Text = "\r\n\r\nCriar cliente";
+            buttonCriarCliente.TextAlign = ContentAlignment.TopCenter;
+            buttonCriarCliente.UseVisualStyleBackColor = false;
             buttonCriarCliente.Click += buttonCriarCliente_Click;
+            buttonCriarCliente.MouseEnter += buttonCriarCliente_MouseEnter;
+            buttonCriarCliente.MouseLeave += buttonCriarCliente_MouseLeave;
             // 
             // buttonEditarPedido
             // 
+            buttonEditarPedido.Anchor = AnchorStyles.None;
+            buttonEditarPedido.BackColor = Color.FromArgb(224, 224, 224);
             buttonEditarPedido.Cursor = Cursors.Hand;
             buttonEditarPedido.FlatAppearance.BorderSize = 0;
             buttonEditarPedido.FlatStyle = FlatStyle.Flat;
-            buttonEditarPedido.Location = new Point(521, 176);
+            buttonEditarPedido.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            buttonEditarPedido.ForeColor = Color.Black;
+            buttonEditarPedido.Image = (Image)resources.GetObject("buttonEditarPedido.Image");
+            buttonEditarPedido.Location = new Point(792, 225);
             buttonEditarPedido.Name = "buttonEditarPedido";
-            buttonEditarPedido.Size = new Size(206, 113);
+            buttonEditarPedido.Size = new Size(300, 300);
             buttonEditarPedido.TabIndex = 3;
-            buttonEditarPedido.Text = "Editar pedido ";
-            buttonEditarPedido.UseVisualStyleBackColor = true;
+            buttonEditarPedido.Text = "\r\n\r\nEditar pedido ";
+            buttonEditarPedido.TextAlign = ContentAlignment.TopCenter;
+            buttonEditarPedido.UseVisualStyleBackColor = false;
             buttonEditarPedido.Click += buttonEditarPedido_Click;
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.Image = Properties.Resources.dd2oj85_b5bab19d_e110_4f51_ae2b_ca39dd6d8d74;
-            pictureBox1.Location = new Point(351, -6);
+            pictureBox1.Location = new Point(522, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(105, 83);
+            pictureBox1.Size = new Size(248, 187);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -99,7 +121,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(1263, 627);
             Controls.Add(pictureBox1);
             Controls.Add(buttonEditarPedido);
             Controls.Add(buttonCriarCliente);
