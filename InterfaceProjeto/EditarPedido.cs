@@ -17,7 +17,9 @@ namespace InterfaceProjeto
             InitializeComponent();
         }
 
-        private void buttonVoltarMenu_Click(object sender, EventArgs e)
+        
+
+        private void buttonVoltarMenu_Click_1(object sender, EventArgs e)
         {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KAIQUE\\Documents\\Estudos\\Programação\\Programador de sistemas - Senac\\Senac---Programador-de-sistemas-\\InterfaceProjeto\\InterfaceProjeto.csproj",
+      "projectUniqueName": "C:\\Users\\KAIQUE\\Documents\\Estudos\\Programação\\Programador de sistemas - Senac\\senac-programador edu\\InterfaceProjeto\\InterfaceProjeto.csproj",
       "projectName": "InterfaceProjeto",
-      "projectPath": "C:\\Users\\KAIQUE\\Documents\\Estudos\\Programação\\Programador de sistemas - Senac\\Senac---Programador-de-sistemas-\\InterfaceProjeto\\InterfaceProjeto.csproj",
+      "projectPath": "C:\\Users\\KAIQUE\\Documents\\Estudos\\Programação\\Programador de sistemas - Senac\\senac-programador edu\\InterfaceProjeto\\InterfaceProjeto.csproj",
       "packagesPath": "C:\\Users\\KAIQUE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KAIQUE\\Documents\\Estudos\\Programação\\Programador de sistemas - Senac\\Senac---Programador-de-sistemas-\\InterfaceProjeto\\obj\\",
+      "outputPath": "C:\\Users\\KAIQUE\\Documents\\Estudos\\Programação\\Programador de sistemas - Senac\\senac-programador edu\\InterfaceProjeto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

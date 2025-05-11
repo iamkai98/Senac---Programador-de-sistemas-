@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CriarCliente));
             buttonVoltarMenu = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -69,33 +69,26 @@
             label10 = new Label();
             label4 = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            labelErro = new Label();
             groupBoxDadosCliente.SuspendLayout();
             groupBoxEndereço.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.dd2oj85_b5bab19d_e110_4f51_ae2b_ca39dd6d8d74;
-            pictureBox1.Location = new Point(843, 9);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(55, 47);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // buttonVoltarMenu
             // 
             buttonVoltarMenu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonVoltarMenu.BackColor = Color.Transparent;
             buttonVoltarMenu.Cursor = Cursors.Hand;
+            buttonVoltarMenu.FlatAppearance.MouseOverBackColor = Color.HotPink;
             buttonVoltarMenu.FlatStyle = FlatStyle.Flat;
-            buttonVoltarMenu.Location = new Point(823, 552);
+            buttonVoltarMenu.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonVoltarMenu.ForeColor = Color.White;
+            buttonVoltarMenu.Location = new Point(1817, 999);
             buttonVoltarMenu.Name = "buttonVoltarMenu";
-            buttonVoltarMenu.Size = new Size(75, 23);
+            buttonVoltarMenu.Size = new Size(75, 30);
             buttonVoltarMenu.TabIndex = 6;
             buttonVoltarMenu.Text = "Voltar ";
-            buttonVoltarMenu.UseVisualStyleBackColor = true;
+            buttonVoltarMenu.UseVisualStyleBackColor = false;
             buttonVoltarMenu.Click += buttonVoltarMenu_Click;
             // 
             // textBox1
@@ -107,14 +100,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(249, 97);
+            textBox2.Location = new Point(268, 97);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 8;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(336, 92);
+            textBox3.Location = new Point(365, 92);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(155, 23);
             textBox3.TabIndex = 9;
@@ -157,54 +150,60 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
-            labelEmail.Location = new Point(516, 19);
+            labelEmail.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelEmail.Location = new Point(515, 18);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(39, 15);
+            labelEmail.Size = new Size(43, 17);
             labelEmail.TabIndex = 16;
             labelEmail.Text = "Email:";
             // 
             // labelCEP
             // 
             labelCEP.AutoSize = true;
-            labelCEP.Location = new Point(249, 79);
+            labelCEP.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelCEP.Location = new Point(268, 78);
             labelCEP.Name = "labelCEP";
-            labelCEP.Size = new Size(31, 15);
+            labelCEP.Size = new Size(34, 17);
             labelCEP.TabIndex = 17;
             labelCEP.Text = "CEP:";
             // 
             // labelCPF
             // 
             labelCPF.AutoSize = true;
-            labelCPF.Location = new Point(336, 76);
+            labelCPF.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelCPF.Location = new Point(364, 72);
             labelCPF.Name = "labelCPF";
-            labelCPF.Size = new Size(31, 15);
+            labelCPF.Size = new Size(34, 17);
             labelCPF.TabIndex = 18;
             labelCPF.Text = "CPF:";
             // 
             // labelTelefone
             // 
             labelTelefone.AutoSize = true;
-            labelTelefone.Location = new Point(516, 74);
+            labelTelefone.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelTelefone.Location = new Point(570, 72);
             labelTelefone.Name = "labelTelefone";
-            labelTelefone.Size = new Size(54, 15);
+            labelTelefone.Size = new Size(61, 17);
             labelTelefone.TabIndex = 19;
             labelTelefone.Text = "Telefone:";
             // 
             // labelNome
             // 
             labelNome.AutoSize = true;
-            labelNome.Location = new Point(14, 19);
+            labelNome.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelNome.Location = new Point(13, 18);
             labelNome.Name = "labelNome";
-            labelNome.Size = new Size(43, 15);
+            labelNome.Size = new Size(48, 17);
             labelNome.TabIndex = 20;
             labelNome.Text = "Nome:";
             // 
             // labelLogradouro
             // 
             labelLogradouro.AutoSize = true;
-            labelLogradouro.Location = new Point(14, 29);
+            labelLogradouro.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelLogradouro.Location = new Point(14, 28);
             labelLogradouro.Name = "labelLogradouro";
-            labelLogradouro.Size = new Size(72, 15);
+            labelLogradouro.Size = new Size(82, 17);
             labelLogradouro.TabIndex = 21;
             labelLogradouro.Text = "Logradouro:";
             // 
@@ -213,43 +212,46 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 9);
             label2.Name = "label2";
-            label2.Size = new Size(154, 15);
+            label2.Size = new Size(0, 15);
             label2.TabIndex = 22;
-            label2.Text = "Informe os dados do cliente";
             // 
             // labelNumero
             // 
             labelNumero.AutoSize = true;
-            labelNumero.Location = new Point(516, 29);
+            labelNumero.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelNumero.Location = new Point(516, 28);
             labelNumero.Name = "labelNumero";
-            labelNumero.Size = new Size(24, 15);
+            labelNumero.Size = new Size(27, 17);
             labelNumero.TabIndex = 23;
             labelNumero.Text = "Nº:";
             // 
             // labelBairro
             // 
             labelBairro.AutoSize = true;
-            labelBairro.Location = new Point(16, 79);
+            labelBairro.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelBairro.Location = new Point(15, 78);
             labelBairro.Name = "labelBairro";
-            labelBairro.Size = new Size(41, 15);
+            labelBairro.Size = new Size(47, 17);
             labelBairro.TabIndex = 24;
             labelBairro.Text = "Bairro:";
             // 
             // labelComplemento
             // 
             labelComplemento.AutoSize = true;
-            labelComplemento.Location = new Point(628, 29);
+            labelComplemento.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelComplemento.Location = new Point(628, 28);
             labelComplemento.Name = "labelComplemento";
-            labelComplemento.Size = new Size(87, 15);
+            labelComplemento.Size = new Size(97, 17);
             labelComplemento.TabIndex = 25;
             labelComplemento.Text = "Complemento:";
             // 
             // labelCidade
             // 
             labelCidade.AutoSize = true;
-            labelCidade.Location = new Point(400, 79);
+            labelCidade.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelCidade.Location = new Point(400, 78);
             labelCidade.Name = "labelCidade";
-            labelCidade.Size = new Size(47, 15);
+            labelCidade.Size = new Size(52, 17);
             labelCidade.TabIndex = 27;
             labelCidade.Text = "Cidade:";
             // 
@@ -263,19 +265,24 @@
             // buttonCadastrar
             // 
             buttonCadastrar.Anchor = AnchorStyles.None;
+            buttonCadastrar.BackColor = Color.Transparent;
             buttonCadastrar.BackgroundImageLayout = ImageLayout.None;
             buttonCadastrar.Cursor = Cursors.Hand;
+            buttonCadastrar.FlatAppearance.MouseOverBackColor = Color.HotPink;
             buttonCadastrar.FlatStyle = FlatStyle.Flat;
-            buttonCadastrar.Location = new Point(348, 415);
+            buttonCadastrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            buttonCadastrar.ForeColor = Color.White;
+            buttonCadastrar.Location = new Point(925, 743);
             buttonCadastrar.Name = "buttonCadastrar";
-            buttonCadastrar.Size = new Size(75, 23);
+            buttonCadastrar.Size = new Size(81, 30);
             buttonCadastrar.TabIndex = 28;
             buttonCadastrar.Text = "Cadastrar";
-            buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.UseVisualStyleBackColor = false;
             // 
             // groupBoxDadosCliente
             // 
             groupBoxDadosCliente.Anchor = AnchorStyles.None;
+            groupBoxDadosCliente.BackColor = Color.Transparent;
             groupBoxDadosCliente.Controls.Add(label9);
             groupBoxDadosCliente.Controls.Add(label8);
             groupBoxDadosCliente.Controls.Add(label7);
@@ -294,9 +301,11 @@
             groupBoxDadosCliente.Controls.Add(labelEmail);
             groupBoxDadosCliente.Controls.Add(labelTelefone);
             groupBoxDadosCliente.Controls.Add(textBox3);
-            groupBoxDadosCliente.Location = new Point(12, 55);
+            groupBoxDadosCliente.FlatStyle = FlatStyle.Flat;
+            groupBoxDadosCliente.ForeColor = SystemColors.ButtonFace;
+            groupBoxDadosCliente.Location = new Point(509, 356);
             groupBoxDadosCliente.Name = "groupBoxDadosCliente";
-            groupBoxDadosCliente.Size = new Size(776, 128);
+            groupBoxDadosCliente.Size = new Size(911, 158);
             groupBoxDadosCliente.TabIndex = 29;
             groupBoxDadosCliente.TabStop = false;
             groupBoxDadosCliente.Text = "Dados básicos";
@@ -305,7 +314,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.Red;
-            label9.Location = new Point(508, 76);
+            label9.Location = new Point(562, 71);
             label9.Name = "label9";
             label9.Size = new Size(12, 15);
             label9.TabIndex = 36;
@@ -315,7 +324,7 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Red;
-            label8.Location = new Point(508, 19);
+            label8.Location = new Point(507, 21);
             label8.Name = "label8";
             label8.Size = new Size(12, 15);
             label8.TabIndex = 35;
@@ -325,7 +334,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.Red;
-            label7.Location = new Point(142, 76);
+            label7.Location = new Point(186, 73);
             label7.Name = "label7";
             label7.Size = new Size(12, 15);
             label7.TabIndex = 34;
@@ -335,7 +344,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.Red;
-            label6.Location = new Point(327, 74);
+            label6.Location = new Point(355, 71);
             label6.Name = "label6";
             label6.Size = new Size(12, 15);
             label6.TabIndex = 33;
@@ -346,7 +355,7 @@
             label5.AutoSize = true;
             label5.FlatStyle = FlatStyle.Flat;
             label5.ForeColor = Color.Red;
-            label5.Location = new Point(6, 71);
+            label5.Location = new Point(5, 71);
             label5.Name = "label5";
             label5.Size = new Size(12, 15);
             label5.TabIndex = 32;
@@ -356,7 +365,7 @@
             // 
             labelAsterisco.AutoSize = true;
             labelAsterisco.ForeColor = Color.Red;
-            labelAsterisco.Location = new Point(6, 19);
+            labelAsterisco.Location = new Point(5, 21);
             labelAsterisco.Name = "labelAsterisco";
             labelAsterisco.Size = new Size(12, 15);
             labelAsterisco.TabIndex = 30;
@@ -364,7 +373,7 @@
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(516, 92);
+            maskedTextBox1.Location = new Point(571, 92);
             maskedTextBox1.Mask = "(99) 00000-0000";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(115, 23);
@@ -373,9 +382,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(152, 76);
+            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            label3.Location = new Point(194, 73);
             label3.Name = "label3";
-            label3.Size = new Size(48, 15);
+            label3.Size = new Size(55, 17);
             label3.TabIndex = 26;
             label3.Text = "Genêro:";
             // 
@@ -383,7 +393,7 @@
             // 
             comboBoxGenero.FormattingEnabled = true;
             comboBoxGenero.Items.AddRange(new object[] { "Feminino", "Masculino", "Não-Binário" });
-            comboBoxGenero.Location = new Point(152, 92);
+            comboBoxGenero.Location = new Point(195, 92);
             comboBoxGenero.Name = "comboBoxGenero";
             comboBoxGenero.Size = new Size(121, 23);
             comboBoxGenero.TabIndex = 25;
@@ -391,9 +401,10 @@
             // labelDataDeNascimento
             // 
             labelDataDeNascimento.AutoSize = true;
-            labelDataDeNascimento.Location = new Point(14, 71);
+            labelDataDeNascimento.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelDataDeNascimento.Location = new Point(13, 72);
             labelDataDeNascimento.Name = "labelDataDeNascimento";
-            labelDataDeNascimento.Size = new Size(117, 15);
+            labelDataDeNascimento.Size = new Size(134, 17);
             labelDataDeNascimento.TabIndex = 24;
             labelDataDeNascimento.Text = "Data de Nascimento:";
             // 
@@ -402,13 +413,14 @@
             maskedTextBoxDataDeNascimento.Location = new Point(14, 92);
             maskedTextBoxDataDeNascimento.Mask = "00/00/0000";
             maskedTextBoxDataDeNascimento.Name = "maskedTextBoxDataDeNascimento";
-            maskedTextBoxDataDeNascimento.Size = new Size(100, 23);
+            maskedTextBoxDataDeNascimento.Size = new Size(134, 23);
             maskedTextBoxDataDeNascimento.TabIndex = 23;
             maskedTextBoxDataDeNascimento.ValidatingType = typeof(DateTime);
             // 
             // groupBoxEndereço
             // 
             groupBoxEndereço.Anchor = AnchorStyles.None;
+            groupBoxEndereço.BackColor = Color.Transparent;
             groupBoxEndereço.Controls.Add(label12);
             groupBoxEndereço.Controls.Add(label11);
             groupBoxEndereço.Controls.Add(label10);
@@ -426,9 +438,11 @@
             groupBoxEndereço.Controls.Add(labelCEP);
             groupBoxEndereço.Controls.Add(labelComplemento);
             groupBoxEndereço.Controls.Add(textBox9);
-            groupBoxEndereço.Location = new Point(12, 198);
+            groupBoxEndereço.FlatStyle = FlatStyle.Flat;
+            groupBoxEndereço.ForeColor = Color.White;
+            groupBoxEndereço.Location = new Point(509, 520);
             groupBoxEndereço.Name = "groupBoxEndereço";
-            groupBoxEndereço.Size = new Size(776, 184);
+            groupBoxEndereço.Size = new Size(911, 144);
             groupBoxEndereço.TabIndex = 30;
             groupBoxEndereço.TabStop = false;
             groupBoxEndereço.Text = "Endereço";
@@ -457,7 +471,7 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.Red;
-            label10.Location = new Point(240, 79);
+            label10.Location = new Point(259, 79);
             label10.Name = "label10";
             label10.Size = new Size(12, 15);
             label10.TabIndex = 39;
@@ -483,20 +497,33 @@
             label1.TabIndex = 37;
             label1.Text = "*";
             // 
+            // labelErro
+            // 
+            labelErro.AutoSize = true;
+            labelErro.BackColor = Color.Transparent;
+            labelErro.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labelErro.ForeColor = Color.White;
+            labelErro.Location = new Point(940, 687);
+            labelErro.Name = "labelErro";
+            labelErro.Size = new Size(48, 17);
+            labelErro.TabIndex = 31;
+            labelErro.Text = "label13";
+            // 
             // CriarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(910, 587);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1904, 1041);
+            Controls.Add(labelErro);
             Controls.Add(groupBoxEndereço);
             Controls.Add(groupBoxDadosCliente);
             Controls.Add(buttonCadastrar);
             Controls.Add(label2);
             Controls.Add(buttonVoltarMenu);
-            Controls.Add(pictureBox1);
             Name = "CriarCliente";
             Text = "CriarCliente";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            WindowState = FormWindowState.Maximized;
             groupBoxDadosCliente.ResumeLayout(false);
             groupBoxDadosCliente.PerformLayout();
             groupBoxEndereço.ResumeLayout(false);
@@ -548,5 +575,6 @@
         private Label label10;
         private Label label4;
         private Label label1;
+        private Label labelErro;
     }
 }

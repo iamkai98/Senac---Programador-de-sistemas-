@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InterfaceProjeto
 {
-    public partial class CriarPedido : Form
+    public partial class Historico : Form
     {
-        public CriarPedido()
+        public Historico()
         {
             InitializeComponent();
         }
@@ -24,10 +24,9 @@ namespace InterfaceProjeto
             this.Hide();
         }
 
-        private void CriarPedido_Load(object sender, EventArgs e)
+        private void Historico_Load(object sender, EventArgs e)
         {
-            labelAvisoCliente.Text = string.Empty;
-            labelAvisoJogo.Text = string.Empty;
+            labelErro.Text = string.Empty;
         }
     }
 }
